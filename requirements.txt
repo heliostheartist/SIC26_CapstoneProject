@@ -1,0 +1,12 @@
+numpy
+pandas
+scipy
+scikit-learn>=1.2
+matplotlib
+xgboost
+optuna
+shap
+joblib
+streamlit
+ucimlrepo      # chỉ cần nếu muốn tự tải dữ liệu UCI thay vì đặt data/data.csv
+jupyter

@@ -1,0 +1,141 @@
+GHI CHÚ GIẢI THÍCH CODE 
+
+MỤC 3.4 — KHÁM PHÁ VÀ TIỀN XỬ LÝ DỮ LIỆU
+
+1. Tách dữ liệu theo tình trạng nhãn
+- Bộ dữ liệu UCI có 4.424 sinh viên: 2.209 Graduate, 1.421 Dropout và 794 Enrolled.
+- Graduate và Dropout đã có kết quả cuối nên được dùng làm tập có nhãn (3.630 hồ sơ). Enrolled vẫn đang học, chưa biết kết quả cuối nên để riêng để chấm điểm sau này.
+- Tỷ lệ Dropout trong tập có nhãn khoảng 39,1%.
+
+2. Khám phá dữ liệu và thời điểm có thông tin
+- Khảo sát mối liên hệ giữa các đặc điểm như tuổi, ngành học, tiến độ học kỳ 1, học bổng/tài chính và nhãn Dropout.
+- Đây là mối liên hệ quan sát được, không chứng minh nguyên nhân.
+- Kết quả học kỳ 2 và một số biến tài chính có thể đến muộn hoặc là hệ quả của việc nghỉ học. Vì mục tiêu là cảnh báo đủ sớm, kịch bản chính dùng thông tin đến hết học kỳ 1 (S1); S2 dùng làm mốc so sánh.
+- Ba biến kinh tế vĩ mô chỉ có 9–10 giá trị khác nhau; cần thận trọng khi xem chúng là thông tin riêng của từng sinh viên.
+
+3. Dòng trùng và ngoại lai
+- Notebook kiểm tra dòng trùng hoàn toàn (sau khi bỏ nhãn/kết quả) và ghi nhận 0 dòng trùng.
+- Một số giá trị được đánh dấu là ngoại lai theo quy tắc IQR. Ngoại lai không đồng nghĩa với dữ liệu sai; nhóm giữ lại các giá trị hợp lý thay vì xóa tự động. RobustScaler được dùng để giảm độ nhạy với giá trị xa số đông.
+- Bộ dữ liệu hiện tại không có giá trị thiếu; imputer trong pipeline là bước dự phòng cho dữ liệu thiếu khi áp dụng.
+
+4. Tạo biến mới (feature engineering)
+- Tạo các tỷ lệ như số môn đạt / số môn đăng ký để biểu diễn tiến độ học dễ so sánh hơn số lượng tuyệt đối.
+- Tạo thêm tỷ lệ đạt qua đánh giá, tỷ lệ môn không có đánh giá, dấu hiệu đăng ký nhưng không tham gia đánh giá, và một số biến tài chính.
+- Mục đích là cung cấp cách biểu diễn có ý nghĩa nghiệp vụ cho mô hình; không mặc định mọi biến mới đều hữu ích. Biến của học kỳ 2 chỉ phù hợp với kịch bản dự báo muộn, không được hiểu là đầu vào của S1.
+
+5. Chia tập
+- Tập có nhãn được chia ngẫu nhiên theo hồ sơ: 80% dev và 20% test, dùng stratify để giữ tỷ lệ Graduate/Dropout gần nhau.
+- Không chia theo student_id hoặc theo năm. Test được giữ riêng để đánh giá cuối; các bước tiền xử lý được đặt trong pipeline để hạn chế rò rỉ thông tin.
+
+Lưu ý khi viết báo cáo: dùng cụm “có liên hệ với tình trạng nghỉ học”, không khẳng định “gây ra/ảnh hưởng”; nêu rõ ngoại lai được xem xét và giữ lại, không bị xóa.
+
+
+MỤC 3.5 — THIẾT KẾ, HUẤN LUYỆN VÀ TỐI ƯU MÔ HÌNH
+
+1. Chọn thời điểm dự đoán
+- Notebook so sánh S0 (lúc nhập học), S1 (hết kỳ 1), S1F (hết kỳ 1 cộng thông tin tài chính) và S2 (hết kỳ 2 cộng thông tin tài chính).
+- S1 là kịch bản triển khai chính vì cân bằng giữa hiệu năng dự báo và việc còn đủ sớm để cố vấn can thiệp. S2 có điểm cao hơn nhưng có thể dùng thông tin đến quá muộn.
+
+2. Baseline và mô hình
+- Baseline là các mốc tham chiếu, không phải ba ứng viên để chọn một: Dummy (đoán theo tỷ lệ lớp), luật một biến (tỷ lệ đạt môn kỳ 1), và Logistic Regression mặc định.
+- Trên kịch bản S1, AUC CV của Dummy là 0,500; luật một biến là 0,880; Logistic Regression mặc định là 0,919.
+- Sau đó so sánh Logistic Regression (LR), Random Forest (RF) và XGBoost (XGB) trên cùng 33 biến S1 để đảm bảo so sánh công bằng. AUC mặc định lần lượt khoảng 0,919; 0,920; 0,920.
+
+3. Cross-validation và Optuna
+- 5-fold cross-validation chia tập dev thành 5 phần; mỗi lượt dùng 4 phần để học và 1 phần để đánh giá. Đây là năm fold trong cùng quy trình CV, không phải chia theo năm học.
+- Optuna thử các tổ hợp siêu tham số cho cả LR, RF và XGB, tối ưu ROC-AUC qua CV. Sau tinh chỉnh, AUC CV ghi nhận: LR 0,9190; RF 0,9206; XGB 0,9244.
+- CV dùng để chọn mô hình/tham số; tập test 20% được giữ riêng để đánh giá cuối, tránh dùng test để lựa chọn.
+
+4. Kiểm tra overfitting
+- So sánh AUC train với AUC validation CV và xem learning curves. Khoảng cách càng lớn có thể cho thấy mô hình học quá sát train.
+- Với kết quả đang lưu: LR 0,938 so với 0,919 (gap 0,019); RF 0,996 so với 0,921 (gap 0,075); XGB 0,965 so với 0,924 (gap 0,041). RF có dấu hiệu overfit rõ nhất trong ba mô hình.
+
+5. Quy tắc chọn mô hình cuối
+- Đọc notebook hiện tại: sau khi xem hiệu năng và overfitting, code giữ các mô hình có ROC-AUC CV nằm trong ngưỡng AUC_TOL so với mức tốt nhất; trong nhóm đủ gần, ưu tiên độ trễ dự đoán thấp, rồi kích thước file nhỏ hơn, rồi thời gian fit thấp hơn.
+- Vì vậy không nên ghi rằng mô hình cuối được chọn chỉ vì XGBoost có AUC cao nhất. Kết quả phần đánh giá test cho biết FINAL là Logistic Regression (LR). AUC_TOL và bảng benchmark tài nguyên cần được trình bày cùng kết quả nếu báo cáo giải thích cụ thể quyết định này.
+- Thời gian/tài nguyên có tham gia tiêu chí chọn cuối; tập test vẫn được để dành cho mục đánh giá tiếp theo.
+
+Lưu ý: số liệu trên lấy từ output hiện có trong notebook; cần dùng đúng phiên bản notebook đã chạy khi viết báo cáo.
+
+
+MỤC 3.6 — ĐÁNH GIÁ, GIẢI THÍCH MÔ HÌNH VÀ FAIRNESS
+
+1. Đánh giá cuối trên test
+- Sau khi chọn LR bằng dev, đánh giá trên tập test giữ riêng. Kết quả LR ở kịch bản S1: ROC-AUC 0,931; PR-AUC 0,916.
+- Tại ngưỡng 0,19: Recall 94,0%; Precision 66,4%; Accuracy 79,1%. ROC-AUC và PR-AUC đánh giá khả năng phân biệt/xếp hạng; Recall, Precision và Accuracy ở đây phụ thuộc ngưỡng.
+- Không chỉ dùng Accuracy vì bỏ sót sinh viên có nguy cơ (FN) và gắn cờ nhầm (FP) có chi phí khác nhau trong bài toán này.
+
+2. Hai ngưỡng quyết định
+- Ngưỡng 0,50 là mốc mặc định để so sánh. Tại đây, test có Recall 78,9%, Precision 82,4%, 272/726 sinh viên bị gắn cờ.
+- Ngưỡng 0,19 được chọn bằng cách thử các ngưỡng trên dự đoán out-of-fold của tập dev và tối đa hóa lợi ích ròng, theo giả định L=1, C=0,05, S=0,30. Không chọn ngưỡng bằng cách xem test.
+- Tại 0,19, Recall tăng lên 94,0%, Precision giảm còn 66,4%, và 402/726 sinh viên bị gắn cờ. Ngưỡng thấp hơn giúp giảm bỏ sót nhưng tăng số ca cần xem xét/báo động nhầm.
+- Ước tính lợi ích ròng/ROI dựa trên L, C, S giả định, chưa phải kết quả triển khai thực tế; cần nói rõ giới hạn này.
+
+3. SHAP
+- SHAP giải thích đặc trưng nào đẩy dự đoán của mô hình lên hoặc xuống, và mức độ đóng góp tương đối.
+- SHAP mô tả cách mô hình dùng biến; không chứng minh biến đó gây ra nghỉ học.
+
+4. Fairness (công bằng giữa nhóm)
+- Notebook so sánh tỷ lệ bị gắn cờ, Recall và FPR theo giới tính, tuổi, học bổng và một số thuộc tính khác.
+- Kết quả mô tả có chênh lệch: FPR nam 46,3% so với nữ 23,7%; FPR nhóm không học bổng 39,1% so với nhóm có học bổng 13,5%. Recall chênh ít hơn ở một số nhóm (nam/nữ 95,5%/92,3%; không/có học bổng 94,6%/88,5%).
+- Một số nhóm nhỏ có chỉ số kém tin cậy. Các chênh lệch là dấu hiệu cần xem xét, chưa chứng minh thiên vị hay có ý nghĩa thống kê vì notebook chưa kiểm định thống kê.
+- Đề xuất Human-in-the-loop: dùng điểm để ưu tiên cố vấn xem hồ sơ; mô hình không tự quyết định quyền lợi của sinh viên.
+
+
+GIẢI THÍCH ỨNG DỤNG STREAMLIT (app.py) — PROTOTYPE CHO QUẢN LÝ GIÁO DỤC
+
+Mục đích của app
+- App chuyển mô hình đã huấn luyện thành giao diện để cán bộ quản lý/cố vấn nhập một hồ sơ hoặc chấm điểm danh sách sinh viên.
+- Kết quả là tín hiệu để sắp thứ tự xem xét và đưa ra gợi ý hỗ trợ. App nhấn mạnh cố vấn vẫn phải kiểm tra hồ sơ và quyết định; mô hình không tự kết luận sinh viên sẽ nghỉ học.
+
+1. Nạp mô hình và cấu hình
+- load_artifacts() đọc artifacts/model.joblib (mô hình đã huấn luyện), artifacts/meta.json (tên mô hình, cột đầu vào, giá trị mặc định, ngưỡng, nhãn ngành...) và artifacts/background.csv (dữ liệu nền dùng giải thích SHAP).
+- @st.cache_resource giữ model trong bộ nhớ để Streamlit không tải lại toàn bộ ở mọi lần tương tác.
+- Nếu thiếu artifacts, app báo cần chạy notebook trước. Vì vậy khi bàn giao cần có app.py, dropout_utils.py và thư mục artifacts phù hợp.
+- Các ngưỡng T_LOW/T_HIGH được đọc từ metadata; app không tự tính lại ngưỡng tại thời điểm người dùng sử dụng.
+
+2. Cách tính dự báo và phân nhóm
+- predict(df_raw) gọi U.add_features() để tạo các biến nghiệp vụ, lấy đúng các cột COLS mà mô hình cần rồi gọi predict_proba(). Kết quả là xác suất dự đoán lớp Dropout.
+- tier_of(p) gán ba mức theo ngưỡng đã lưu: Xanh nếu p < T_LOW; Vàng nếu T_LOW ≤ p < T_HIGH; Đỏ nếu p ≥ T_HIGH. Với output notebook hiện tại, các ngưỡng là 0,19 và 0,62.
+- TIER_STYLE quy định màu và nhãn diễn giải; ACTIONS quy định gợi ý hành động theo mức. Đây là các quy tắc nội dung do nhóm viết, không phải mô hình tự sinh khuyến nghị.
+
+3. Màn hình “Danh sách cần ưu tiên” — chấm nhiều hồ sơ bằng CSV
+- Người dùng tải CSV; app thử đọc dấu phân cách chấm phẩy, sau đó thử dấu phẩy nếu số cột ít bất thường. Chuẩn hóa tên cột giúp chấp nhận khác biệt chữ hoa/thường và bí danh Marital status.
+- prepare_for_scoring() bổ sung cột đầu vào bị thiếu bằng trung vị/cấu hình mặc định từ metadata; giá trị ô không đọc thành số hoặc bị thiếu cũng được điền bằng giá trị mặc định. Nếu thiếu cả cột, app hiện cảnh báo vì dự báo có thể kém tin cậy.
+- Cột Target nếu có trong file không đi vào X đầu vào: mô hình chỉ nhận RAW, tức các trường đặc trưng đã cấu hình.
+- score_frame() chấm từng dòng, gán xác suất, mức ưu tiên và thứ hạng từ nguy cơ cao xuống thấp.
+- Bảng tổng quan hiển thị số hồ sơ Đỏ/Vàng/Xanh, biểu đồ số lượng theo mức và bộ lọc (mặc định tập trung Đỏ + Vàng). Bảng hiển thị tối đa 300 dòng đầu; nút tải CSV xuất kết quả đầy đủ.
+- File kết quả xuất thứ hạng, xác suất, mức ưu tiên và một gợi ý hành động đầu tiên theo mức. Nếu file gốc có cột nhận diện như student_id/mã sinh viên, cột đó được giữ để đối chiếu; nếu không, app dùng số thứ tự dòng.
+- Phần “Xem chi tiết một hồ sơ” cho chọn một dòng theo thứ hạng. App hiện xác suất, màu/mức ưu tiên, tất cả gợi ý hành động của mức đó và giải thích SHAP cho hồ sơ đang chọn. Không tính SHAP cho toàn bộ file cùng lúc để tránh làm chậm; chỉ tính khi cần xem chi tiết.
+
+4. Màn hình “Đánh giá một hồ sơ”
+- Các trường nhập được chia thành thông tin đầu vào và kết quả học kỳ 1: ngành, tuổi, giới tính, học bổng, điểm đầu vào, môn đăng ký/đạt, điểm và thông tin đánh giá.
+- Những trường RAW không hiện trên giao diện vẫn được điền giá trị mặc định từ dữ liệu huấn luyện. Do đó người dùng cần hiểu app không thu thập mọi thuộc tính mà mô hình dùng; hồ sơ được hoàn thiện một phần bằng các giá trị mặc định.
+- Sau khi nhập, app lập tức hiển thị xác suất, mức màu, gợi ý hành động và các yếu tố SHAP lớn nhất. Nếu số môn đạt lớn hơn số môn đăng ký, app cảnh báo kiểm tra lại.
+- Biểu đồ SHAP tô đỏ cho đóng góp đẩy dự đoán lên và xanh cho đóng góp kéo dự đoán xuống. Đây là giải thích dự đoán, không phải bằng chứng nguyên nhân.
+
+5. Mô phỏng What-if
+- Thanh trượt giả định sinh viên đạt thêm môn ở kỳ 1. App thay giá trị “số môn đạt”, chạy lại mô hình rồi so sánh xác suất/mức hiện tại với xác suất/mức theo giả định.
+- What-if giúp cố vấn đặt câu hỏi “nếu đầu vào thay đổi thì mô hình dự đoán thế nào?”. Nó không mô phỏng hiệu quả nhân quả của một chương trình hỗ trợ và không thể khẳng định giúp sinh viên đạt thêm môn ngoài đời sẽ làm xác suất giảm đúng như kết quả.
+
+6. Màn hình “Mô hình & cách dùng”
+- Hiển thị kịch bản dự báo, mô hình, ROC-AUC test và giải thích ba mức ngưỡng.
+- Hiển thị các giả định L/c/s đã dùng chọn ngưỡng, kèm nhắc rằng cần thay bằng số có nguồn trước khi triển khai.
+- Mô tả quy trình: cập nhật dữ liệu sau kỳ 1 → tải/chấm danh sách → cố vấn rà soát/liên hệ → ghi nhận hỗ trợ và theo dõi kết quả kỳ sau.
+- Nhắc hạn chế về dữ liệu một cơ sở ở Bồ Đào Nha, tính chất ước lượng của xác suất, giới hạn What-if, fairness và quyền quyết định của con người.
+- Cuối trang nhắc theo dõi phân bố dữ liệu và kết quả để nhận biết suy giảm theo thời gian. Đây hiện là hướng dẫn/khuyến nghị vận hành; app chưa tự động tính chỉ số drift hay gửi cảnh báo drift.
+
+7. Giao diện và hỗ trợ dark mode
+- Giao diện chia thành ba tab theo nhiệm vụ: danh sách cần ưu tiên, đánh giá một hồ sơ, thông tin mô hình. Sidebar nhắc lại ngưỡng để người dùng dễ tra cứu.
+- CSS dùng màu chữ/nền theo biến theme của Streamlit cho ô số, nút tăng/giảm và thẻ chỉ số để tăng độ tương phản khi chuyển giữa light mode và dark mode.
+- Màu Đỏ/Vàng/Xanh là mã hóa trực quan mức ưu tiên; luôn đi kèm chữ để không phụ thuộc riêng vào màu.
+
+8. Giới hạn cần trình bày trong báo cáo/demo
+- Mặc định đầu vào dựa trên dữ liệu UCI; thiếu cột sẽ được điền giá trị đại diện nên kết quả có thể mất độ tin cậy. Nên dùng file đủ các trường và kiểm tra cảnh báo thiếu dữ liệu.
+- Ngưỡng đỏ/vàng và gợi ý hành động là cấu hình prototype, cần được chuyên gia giáo dục xác nhận trước khi áp dụng thật.
+- CSV được hiển thị cùng xác suất và mức ưu tiên; SHAP chỉ tính cho hồ sơ người dùng chọn xem chi tiết. File tải xuống chưa có giải thích SHAP cho từng dòng.
+- Chưa có xác thực người dùng, phân quyền, nhật ký truy cập, kết nối hệ thống quản lý sinh viên hay giám sát drift tự động. Khi triển khai với dữ liệu thật cần bổ sung kiểm soát truy cập/bảo vệ thông tin cá nhân và đánh giá định kỳ.
+- Để đạt yêu cầu minh chứng prototype trong rubric, cần chạy thử toàn bộ luồng và chuẩn bị URL app online hoặc video demo 2–3 phút; code giao diện tự nó chưa phải minh chứng đã triển khai.
+
+Mạch trình bày app trong báo cáo
+“Nhóm xây dựng prototype bằng Streamlit cho hai tác vụ: chấm điểm danh sách CSV để quản lý ưu tiên nguồn lực tư vấn, và nhập một hồ sơ để xem dự báo/SHAP/What-if. Kết quả được chia thành ba mức theo ngưỡng cấu hình; hệ thống đưa gợi ý tương ứng nhưng giữ cố vấn trong vòng ra quyết định. Prototype hiện chưa kết nối hệ thống trường và chưa kiểm chứng trên kết quả tương lai tại cơ sở triển khai, nên chỉ minh họa khả năng ứng dụng.”
