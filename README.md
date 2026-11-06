@@ -19,6 +19,3 @@ streamlit run app.py
 ```
 
 Notebook tìm dữ liệu tại `data/raw/data.csv` và ghi hình/mô hình vào `reports/figures/` và `models/artifacts/`.
-# SIC26_CapstoneProject
-# SIC26_CapstoneProject
-# SIC26_CapstoneProject
