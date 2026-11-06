@@ -15,6 +15,7 @@ format:
     papersize: a4
     pdf-engine: xelatex
     toc: true
+    toc-title: "Mục lục"
     toc-depth: 3
     number-sections: true
     colorlinks: true
@@ -62,17 +63,17 @@ execute:
 \newpage
 # Lời cảm ơn và tuyên bố sử dụng AI {.unnumbered}
 
-**Lời cảm ơn.** Tác giả xin bày tỏ lòng biết ơn chân thành và sâu sắc đến **Thạc sĩ Trần Mạnh Tường** — giảng viên học phần *Trí tuệ Nhân tạo Ứng dụng & Khoa học Dữ liệu* — đã tận tình giảng dạy, định hướng và hướng dẫn phương pháp tư duy thiết kế (**Design Thinking**), quy trình khai phá dữ liệu chuẩn công nghiệp (**CRISP-DM**), cũng như nền tảng lý thuyết và cách vận dụng các mô hình học máy (**Logistic Regression, Random Forest, XGBoost**) và kỹ thuật giải thích mô hình được sử dụng xuyên suốt trong đồ án.
+**Lời cảm ơn.** Lời đầu tiên em xin gửi lời cảm ơn đến Ban tổ chức của chương trình Samsung Innovation Campus 2026 đã tạo điều kiện cho em được học tập, trau dồi kiến thức và kỹ năng. Em cũng xin bày tỏ lòng biết ơn chân thành và sâu sắc đến Thạc sĩ Trần Mạnh Tường, giảng viên học phần Trí tuệ Nhân tạo Ứng dụng & Khoa học Dữ liệu của chương trình Samsung Innovation Campus 2026, đã tận tình giảng dạy, định hướng và hướng dẫn phương pháp Design Thinking, quy trình khai phá dữ liệu CRISP-DM, cũng như nền tảng lý thuyết và cách vận dụng các mô hình học máy và kỹ thuật giải thích mô hình được sử dụng xuyên suốt trong đồ án.
 
-Đồng thời, tác giả xin trân trọng cảm ơn kho dữ liệu học máy **UCI Machine Learning Repository** cùng nhóm tác giả **Valentim Realinho, Jorge Machado, Luís Baptista và M. V. Martins** (Viện Bách khoa Portalegre, Bồ Đào Nha) đã thu thập, chuẩn hóa và công bố công khai bộ dữ liệu *Predict Students' Dropout and Academic Success* theo giấy phép mở (CC BY 4.0) để phục vụ mục đích nghiên cứu khoa học và giáo dục.
+Đồng thời, em xin trân trọng cảm ơn kho dữ liệu học máy **UCI Machine Learning Repository** cùng nhóm tác giả **Valentim Realinho, Jorge Machado, Luís Baptista và M. V. Martins** (Viện Bách khoa Portalegre, Bồ Đào Nha) đã thu thập, chuẩn hóa và công bố công khai bộ dữ liệu *Predict Students' Dropout and Academic Success* theo giấy phép mở (CC BY 4.0) để phục vụ mục đích nghiên cứu khoa học và giáo dục.
 
-**Tuyên bố sử dụng AI (Academic Integrity).** Tuân thủ nguyên tắc minh bạch và liêm chính học thuật, tác giả tuyên bố có sử dụng các công cụ Trí tuệ Nhân tạo tạo sinh (Generative AI) với vai trò trợ lý hỗ trợ trong quá trình lập đề cương, tra cứu nguồn tham khảo, rà soát cú pháp mã nguồn và biên tập báo cáo. Cụ thể, phạm vi sử dụng từng công cụ như sau:
+**Tuyên bố sử dụng AI.** Tuân thủ nguyên tắc minh bạch và liêm chính học thuật, em xin tuyên bố có sử dụng các công cụ Trí tuệ Nhân tạo tạo sinh (Generative AI) với vai trò trợ lý hỗ trợ trong quá trình lập đề cương, tra cứu nguồn tham khảo, rà soát cú pháp mã nguồn và biên tập báo cáo. Cụ thể, phạm vi sử dụng từng công cụ như sau:
 
-- **Claude Sonnet 5.5:** Hỗ trợ xây dựng và triển khai đề cương chi tiết ban đầu (`docs/OUTLINE_BAO_CAO_CUOI_KHOA.md`) và bản đề cương hoàn thiện nguồn trích dẫn (`docs/OUTLINE_BAO_CAO_CUOI_KHOA_da_chinh_sua_nguon.md`); gợi ý cấu trúc tổ chức mã nguồn, hỗ trợ kiểm tra và sửa lỗi cú pháp (syntax debugging) trong mã nguồn phân tích, ứng dụng và định dạng Quarto; đồng thời hỗ trợ rà soát, biên tập và hoàn thiện câu chữ cho bản báo cáo cuối cùng (`Report_26_11_6.qmd`).
-- **Perplexity:** Hỗ trợ tìm kiếm, tra cứu và gợi ý các nguồn tài liệu học thuật, bài báo khoa học, tài liệu chuẩn thư viện và khung đạo đức AI có liên quan để bổ sung, chuẩn hóa trích dẫn vào đề cương (`docs/OUTLINE_BAO_CAO_CUOI_KHOA_da_chinh_sua_nguon.md`) cùng các tệp tài liệu tham khảo (`references.bib`).
-- **ChatGPT 6 Luna và Gemini 4 Argon:** Hỗ trợ triển khai và mở rộng bản thảo nội dung các chương/mục của bài báo cáo dựa trên khung đề cương chi tiết (`docs/OUTLINE_BAO_CAO_CUOI_KHOA.md` và `docs/OUTLINE_BAO_CAO_CUOI_KHOA_da_chinh_sua_nguon.md`).
+- **Claude Sonnet 5.5:** Hỗ trợ xây dựng và triển khai đề cương chi tiết ban đầu (`docs/OUTLINE_BAO_CAO_CUOI_KHOA.md`) và bản đề cương hoàn thiện nguồn trích dẫn; gợi ý cấu trúc tổ chức mã nguồn, hỗ trợ kiểm tra và sửa lỗi cú pháp trong mã nguồn phân tích, ứng dụng và định dạng Quarto; đồng thời hỗ trợ rà soát, biên tập và hoàn thiện câu chữ cho bản báo cáo cuối cùng (`Report_26_11_6.qmd`).
+- **Perplexity:** Hỗ trợ tìm kiếm, tra cứu và gợi ý các nguồn tài liệu học thuật, bài báo khoa học, tài liệu chuẩn thư viện và khung đạo đức AI có liên quan để bổ sung, chuẩn hóa trích dẫn vào đề cương (`docs/OUTLINE_BAO_CAO_CUOI_KHOA.md`) cùng các tệp tài liệu tham khảo (`references.bib`).
+- **ChatGPT 6 Luna và Gemini 4 Argon:** Hỗ trợ triển khai và mở rộng bản thảo nội dung các chương/mục của bài báo cáo dựa trên khung đề cương chi tiết (`docs/OUTLINE_BAO_CAO_CUOI_KHOA.md`).
 
-Các công cụ AI nêu trên không thay thế việc lựa chọn dữ liệu, thiết kế thí nghiệm, thực hiện quy trình phân tích trong mã nguồn, kiểm tra kết quả thực nghiệm và chịu trách nhiệm học thuật của tác giả. Tác giả đã trực tiếp đối chiếu và xác minh toàn bộ nội dung, số liệu, bảng biểu, hình ảnh và kết luận trong báo cáo với kết quả thực tế từ notebook (`notebooks/SIC_UCI_DropStudent_out.ipynb`), module tiện ích (`dropout_utils.py`), ứng dụng (`app.py`) và các tệp kết quả của dự án.
+Các công cụ AI nêu trên không thay thế việc lựa chọn dữ liệu, thiết kế thí nghiệm, thực hiện quy trình phân tích trong mã nguồn, kiểm tra kết quả thực nghiệm và chịu trách nhiệm học thuật của em. Em đã trực tiếp đối chiếu và xác minh toàn bộ nội dung, số liệu, bảng biểu, hình ảnh và kết luận trong báo cáo với kết quả thực tế từ notebook (`notebooks/SIC_UCI_DropStudent_out.ipynb`), module tiện ích (`dropout_utils.py`), ứng dụng (`app.py`) và các tệp kết quả của dự án.
 
 # Tóm tắt {.unnumbered}
 
@@ -99,7 +100,7 @@ Các công cụ AI nêu trên không thay thế việc lựa chọn dữ liệu,
 | LR, RF, XGB | Logistic Regression, Random Forest, XGBoost |
 | NB, ROI | Lợi ích ròng, tỷ suất lợi ích trên chi phí can thiệp |
 | OOF | Out-of-fold, dự báo cho các mẫu không tham gia huấn luyện fold đó |
-| S0, S1, S1F, S2 | Các kịch bản thông tin theo thời điểm dự báo (xem Mục 3.2) |
+| S0, S1, S1F, S2 | Các kịch bản thông tin theo thời điểm dự báo (xem [Mục 3.2](#sec-scenarios)) |
 | SHAP | SHapley Additive exPlanations |
 | SIS | Hệ thống thông tin sinh viên |
 | SMART | Cụ thể, đo lường được, khả thi, phù hợp, có thời hạn |
@@ -107,9 +108,9 @@ Các công cụ AI nêu trên không thay thế việc lựa chọn dữ liệu,
 
 : Danh mục từ viết tắt {#tbl-abbreviations}
 
-# Giới thiệu và xác định bài toán
+# Giới thiệu và xác định bài toán {#sec-ch1}
 
-## Bối cảnh và vấn đề
+## Bối cảnh và vấn đề {#sec-context}
 
 Nghỉ học giữa chừng là một trong những kết cục bất lợi nhất của giáo dục đại học: người học mất thời gian và chi phí đã đầu tư, còn nhà trường mất nguồn lực đào tạo và uy tín về chất lượng. Các nghiên cứu về nghỉ học đại học thường nhìn quyết định rời trường như kết quả của sự tương tác giữa sinh viên và môi trường học tập, trong đó mức độ hòa nhập về học thuật và xã hội đóng vai trò quan trọng [@tinto1975]. Hệ quả thực tiễn là dấu hiệu khó khăn thường xuất hiện sớm trong chính các hồ sơ mà nhà trường đã lưu: ngành đăng ký, điểm đầu vào, số môn đăng ký và số môn đạt trong học kỳ đầu.
 
@@ -117,14 +118,14 @@ Từ hướng tiếp cận phân tích học tập (learning analytics), nhiều
 
 Có một khoảng cách giữa việc "xây được mô hình có AUC cao" và việc "có một công cụ mà cố vấn học tập dùng được". Đồ án này xử lý bốn khoảng cách đó:
 
-1. **Thời điểm.** Mô hình có thể đạt AUC cao hơn nếu dùng cả kết quả học kỳ 2 hoặc các biến được ghi nhận muộn, nhưng khi đó cảnh báo đến quá trễ hoặc dùng thông tin chưa có lúc cần dự báo. Cần chọn rõ mốc cảnh báo và chỉ dùng thông tin có trước mốc đó (Mục 3.2).
+1. **Thời điểm.** Mô hình có thể đạt AUC cao hơn nếu dùng cả kết quả học kỳ 2 hoặc các biến được ghi nhận muộn, nhưng khi đó cảnh báo đến quá trễ hoặc dùng thông tin chưa có lúc cần dự báo. Cần chọn rõ mốc cảnh báo và chỉ dùng thông tin có trước mốc đó ([Mục 3.2](#sec-scenarios)).
 2. **Giải thích.** Một danh sách điểm số không có lý do dễ tạo thêm việc cho cố vấn và làm giảm niềm tin. Cần chỉ ra yếu tố nào đẩy điểm rủi ro lên hoặc xuống ở từng hồ sơ.
 3. **Ngưỡng và chi phí.** Ngưỡng 0,50 là quy ước, không phải lựa chọn gắn với năng lực tư vấn của nhà trường. Bỏ sót một sinh viên có nguy cơ và gọi nhầm một sinh viên ổn định có hậu quả khác nhau, nên ngưỡng cần được chọn có chủ đích.
 4. **Công bằng và rủi ro sử dụng.** Dữ liệu chứa giới tính, tuổi, học bổng; một điểm rủi ro có thể bị dùng sai thành nhãn gán cho cá nhân. Cần kiểm tra chênh lệch giữa các nhóm và đặt công cụ vào quy trình có con người quyết định.
 
 Quy trình thủ công khiến CVHT khó sắp xếp thứ tự xem xét khi số hồ sơ lớn; cảnh báo bỏ sót lại có thể khiến sinh viên không nhận được liên hệ kịp thời. Vì vậy, bài toán được xác định là **xếp hạng và phân tầng hồ sơ cần CVHT xem xét sau khi có kết quả học kỳ 1**, kèm theo lý do mô hình đưa ra điểm rủi ro.
 
-## Phát biểu bài toán và câu hỏi nghiên cứu
+## Phát biểu bài toán và câu hỏi nghiên cứu {#sec-problem}
 
 Với mỗi hồ sơ sinh viên $i$, gọi $\mathbf{x}_i$ là vector các thông tin đã biết đến hết học kỳ 1 (thông tin đầu vào, kết quả học kỳ 1 và các biến tỷ lệ dẫn xuất từ chúng) và $y_i \in \{0,1\}$ là nhãn cuối cùng, với $y_i=1$ nếu sinh viên `Dropout` và $y_i=0$ nếu `Graduate`. Mô hình ước lượng
 $$
@@ -136,14 +137,14 @@ sau đó hệ thống (i) xếp hạng các hồ sơ theo $\hat p_i$, (ii) phân
 
 | Mã | Câu hỏi | Phần trả lời |
 |---|---|---|
-| RQ1 | Nên dự báo tại thời điểm nào, và dùng những biến nào, để cảnh báo vừa đủ sớm vừa không rò rỉ thông tin? | Mục 3.2, Mục 4.1 |
-| RQ2 | Trong ba họ mô hình bảng phổ biến (LR, RF, XGB), mô hình nào nên được chọn khi xét cả hiệu năng, quá khớp, độ trễ và khả năng giải thích? | Mục 4.2–4.4 |
-| RQ3 | Ngưỡng cảnh báo nên đặt ở đâu khi bỏ sót và báo nhầm có chi phí khác nhau, và đánh đổi đó trông như thế nào trên tập kiểm thử? | Mục 1.6, Mục 5.1–5.2 |
-| RQ4 | Điểm rủi ro được giải thích, kiểm tra công bằng và đặt vào quy trình vận hành ra sao để hỗ trợ chứ không thay thế quyết định của con người? | Mục 5.3–5.4, Chương 6 |
+| RQ1 | Nên dự báo tại thời điểm nào, và dùng những biến nào, để cảnh báo vừa đủ sớm vừa không rò rỉ thông tin? | [Mục 3.2](#sec-scenarios), [Mục 4.1](#sec-scenario-eval) |
+| RQ2 | Trong ba họ mô hình bảng phổ biến (LR, RF, XGB), mô hình nào nên được chọn khi xét cả hiệu năng, quá khớp, độ trễ và khả năng giải thích? | [Mục 4.2](#sec-baselines)–[Mục 4.4](#sec-selection) |
+| RQ3 | Ngưỡng cảnh báo nên đặt ở đâu khi bỏ sót và báo nhầm có chi phí khác nhau, và đánh đổi đó trông như thế nào trên tập kiểm thử? | [Mục 1.6](#sec-benefit), [Mục 5.1](#sec-test-perf)–[Mục 5.2](#sec-thresholds) |
+| RQ4 | Điểm rủi ro được giải thích, kiểm tra công bằng và đặt vào quy trình vận hành ra sao để hỗ trợ chứ không thay thế quyết định của con người? | [Mục 5.3](#sec-shap-eval)–[Mục 5.4](#sec-fairness-eval), [Chương 6](#sec-ch6) |
 
 : Câu hỏi nghiên cứu và vị trí trả lời {#tbl-rq}
 
-## Người dùng và nhu cầu
+## Người dùng và nhu cầu {#sec-users}
 
 Người dùng trực tiếp là CVHT hoặc chuyên viên hỗ trợ sinh viên; sinh viên năm nhất là người thụ hưởng. CVHT cần biết hồ sơ nào nên xem trước, yếu tố nào đóng góp vào dự báo, và có thể đề xuất bước hỗ trợ phù hợp. Sinh viên cần được tiếp cận hỗ trợ tôn trọng, kín đáo và không bị xem như một nhãn rủi ro cố định. Ban đào tạo và bộ phận công tác sinh viên là các bên liên quan về dữ liệu và quy trình, còn người quản trị hệ thống chịu trách nhiệm vận hành mô hình.
 
@@ -156,7 +157,7 @@ Người dùng trực tiếp là CVHT hoặc chuyên viên hỗ trợ sinh viên
 
 : Nhu cầu người dùng và quyết định thiết kế {#tbl-needs}
 
-### Chân dung người dùng và bản đồ thấu cảm
+### Chân dung người dùng và bản đồ thấu cảm {#sec-persona}
 
 CVHT thường phải xử lý hồ sơ từ nhiều hệ thống, cân nhắc thời gian liên hệ và phân biệt trường hợp cần can thiệp ngay với trường hợp chỉ cần theo dõi. Họ chịu hai áp lực trái chiều: sợ bỏ sót sinh viên cần giúp, nhưng cũng ngại một danh sách quá dài khiến mọi cảnh báo mất giá trị. Bản đồ thấu cảm dưới đây tóm tắt các góc nhìn đó và chuyển chúng thành hàm ý thiết kế cụ thể.
 
@@ -170,7 +171,7 @@ CVHT thường phải xử lý hồ sơ từ nhiều hệ thống, cân nhắc t
 : Bản đồ thấu cảm và hàm ý thiết kế {#tbl-empathy}
 
 
-## Phân loại bài toán và mục tiêu SMART
+## Phân loại bài toán và mục tiêu SMART {#sec-smart}
 
 Đây là bài toán phân loại nhị phân có giám sát, được dùng theo hai hướng: khai phá các tín hiệu liên quan đến nghỉ học và hỗ trợ CVHT ưu tiên hồ sơ. Vì giá trị thực tế nằm ở thứ tự ưu tiên chứ không phải ở một nhãn cứng, báo cáo coi **xếp hạng** (đo bằng ROC-AUC và Average Precision) và **quyết định theo ngưỡng** (đo bằng Recall, Precision, tỷ lệ gắn cờ) là hai khía cạnh cần báo cáo tách bạch. Mục tiêu SMART của nguyên mẫu được cụ thể hóa như sau:
 
@@ -186,13 +187,13 @@ CVHT thường phải xử lý hồ sơ từ nhiều hệ thống, cân nhắc t
 | Phát hiện ca nghỉ học | Recall cao tại ngưỡng vận hành | 94,0% tại ngưỡng 0,19 | @tbl-test-results |
 | Khối lượng rà soát | Công khai tỷ lệ gắn cờ | 55,4% hồ sơ Test bị gắn cờ | @tbl-test-results |
 | Tốc độ | Trả điểm tức thì | $\approx$ 0,013 ms/hồ sơ (chỉ mô hình) | @tbl-model-cost |
-| Giải thích | Có lý do cho từng dự báo | SHAP cục bộ trong ứng dụng | Mục 6.1 |
+| Giải thích | Có lý do cho từng dự báo | SHAP cục bộ trong ứng dụng | [Mục 6.1](#sec-app) |
 
 : Đối chiếu mục tiêu SMART với kết quả {#tbl-smart}
 
 Các chỉ tiêu này là tiêu chí thiết kế và đánh giá kỹ thuật của đồ án. Chúng không phải cam kết rằng hệ thống sẽ đạt cùng hiệu năng tại một trường khác.
 
-## Mục tiêu, phạm vi và đóng góp
+## Mục tiêu, phạm vi và đóng góp {#sec-scope}
 
 Mục tiêu là xây dựng nguyên mẫu dự báo nguy cơ `Dropout` từ các biến có thể biết đến hết kỳ 1, đánh giá trên tập kiểm thử giữ riêng và cung cấp giải thích cho từng dự báo. Hệ thống dự kiến chạy cục bộ bằng Streamlit; độ trễ trung bình khoảng 0,013 ms/hồ sơ được đo trên máy phát triển, không bao gồm giao diện, nạp dữ liệu hoặc tính SHAP.
 
@@ -221,9 +222,9 @@ Viết lại $NB = TP\cdot SL - (TP+FP)\,C$ cho thấy ý nghĩa: lợi ích k�
 $$
 p > t_{\text{lý thuyết}} = \frac{C}{S\,L} = \frac{0{,}05}{0{,}30\times 1} \approx 0{,}167,
 $$
-với điều kiện xác suất mô hình được hiệu chỉnh tốt. Ngưỡng 0,19 chọn bằng thực nghiệm trên dự báo ngoài fold (Mục 5.2) cùng bậc độ lớn với giá trị này; sự chênh nhỏ có thể đến từ việc xác suất chưa hiệu chỉnh hoàn toàn và từ nhiễu mẫu. Công thức cũng cho thấy ngưỡng nhạy với giả định: $S$ thấp hơn hoặc $C$ cao hơn sẽ đẩy ngưỡng lên (@tbl-threshold-sens ở Mục 5.2).
+với điều kiện xác suất mô hình được hiệu chỉnh tốt. Ngưỡng 0,19 chọn bằng thực nghiệm trên dự báo ngoài fold ([Mục 5.2](#sec-thresholds)) cùng bậc độ lớn với giá trị này; sự chênh nhỏ có thể đến từ việc xác suất chưa hiệu chỉnh hoàn toàn và từ nhiễu mẫu. Công thức cũng cho thấy ngưỡng nhạy với giả định: $S$ thấp hơn hoặc $C$ cao hơn sẽ đẩy ngưỡng lên (@tbl-threshold-sens ở [Mục 5.2](#sec-thresholds)).
 
-**Ví dụ tính tay trên tập kiểm thử.** Từ các ma trận nhầm lẫn ở @fig-cm (Mục 5.1), lợi ích ròng được tính lại cho hai ngưỡng như sau (chỉ để minh họa; ngưỡng không được chọn bằng Test):
+**Ví dụ tính tay trên tập kiểm thử.** Từ các ma trận nhầm lẫn ở @fig-cm ([Mục 5.1](#sec-test-perf)), lợi ích ròng được tính lại cho hai ngưỡng như sau (chỉ để minh họa; ngưỡng không được chọn bằng Test):
 
 | Ngưỡng | TP | FP | Số hồ sơ gắn cờ | NB | NB / sinh viên | ROI |
 |---|---:|---:|---:|---:|---:|---:|
@@ -236,26 +237,26 @@ với điều kiện xác suất mô hình được hiệu chỉnh tốt. Ngư�
 
 Ngưỡng cần được tính lại khi có chi phí tư vấn, giá trị duy trì người học và hiệu quả can thiệp đáng tin cậy.
 
-## Bố cục báo cáo
+## Bố cục báo cáo {#sec-outline}
 
-Chương 2 trình bày cơ sở lý thuyết và quy trình; Chương 3 mô tả dữ liệu, định nghĩa các kịch bản S0/S1/S1F/S2, khám phá dữ liệu và đặc trưng; Chương 4 so sánh kịch bản và lựa chọn mô hình; Chương 5 đánh giá, giải thích và phân tích công bằng; Chương 6 giới thiệu ứng dụng, quy trình vận hành và hạn chế.
+[Chương 2](#sec-ch2) trình bày cơ sở lý thuyết và quy trình; [Chương 3](#sec-ch3) mô tả dữ liệu, định nghĩa các kịch bản S0/S1/S1F/S2, khám phá dữ liệu và đặc trưng; [Chương 4](#sec-ch4) so sánh kịch bản và lựa chọn mô hình; [Chương 5](#sec-ch5) đánh giá, giải thích và phân tích công bằng; [Chương 6](#sec-ch6) giới thiệu ứng dụng, quy trình vận hành và hạn chế.
 
-# Cơ sở lý thuyết và quy trình
+# Cơ sở lý thuyết và quy trình {#sec-ch2}
 
 Chương này trình bày khung quy trình nghiên cứu, các nguyên tắc thiết kế thí nghiệm để kết quả đáng tin, các thuật toán và chỉ số được dùng, và kiến trúc tổng thể của giải pháp. Mục đích là để các chương sau có thể dùng các khái niệm này mà không phải giải thích lại.
 
-## Quy trình nghiên cứu CRISP-DM
+## Quy trình nghiên cứu CRISP-DM {#sec-crispdm}
 
 Đồ án sử dụng CRISP-DM với sáu giai đoạn: hiểu bài toán; hiểu dữ liệu; chuẩn bị dữ liệu; mô hình hóa; đánh giá; và triển khai [@chapman2000]. CRISP-DM được chọn vì nó mô tả quy trình khai phá dữ liệu theo ngôn ngữ nghiệp vụ, phù hợp với một bài toán có người dùng cuối là CVHT, và vì nó coi quy trình là chu trình lặp. @tbl-crisp ánh xạ từng giai đoạn sang hoạt động cụ thể, sản phẩm tạo ra và vị trí trong báo cáo.
 
 | Giai đoạn | Hoạt động trong đồ án | Sản phẩm | Vị trí |
 |---|---|---|---|
-| 1. Hiểu bài toán | Xác định mốc cảnh báo cuối kỳ 1, người dùng CVHT, mục tiêu SMART, giả định chi phí | Phát biểu bài toán, RQ1–RQ4, hàm lợi ích | Chương 1 |
-| 2. Hiểu dữ liệu | Kiểm tra cấu trúc, nhãn, phân phối; xác định thời điểm có sẵn của từng nhóm biến | Bảng nhóm biến, EDA, định nghĩa kịch bản | Chương 3 |
-| 3. Chuẩn bị dữ liệu | Kiểm soát rò rỉ, làm sạch, tạo đặc trưng tỷ lệ, dựng pipeline, chia Dev/Test | Pipeline tiền xử lý, bảng đặc trưng | Chương 3 |
-| 4. Mô hình hóa | So sánh LR, RF, XGB; baseline; tối ưu Optuna; kiểm tra quá khớp; chọn mô hình | Mô hình LR đã chọn | Chương 4 |
-| 5. Đánh giá | Kiểm thử độc lập, chọn ngưỡng trên OOF, SHAP, lát cắt nhóm | Bảng hiệu năng, hai ngưỡng, phân tích công bằng | Chương 5 |
-| 6. Triển khai mẫu | Đóng gói pipeline và giao diện Streamlit cho CVHT; đề xuất quy trình vận hành | `models/artifacts/`, `app.py`, quy trình thí điểm | Chương 6 |
+| 1. Hiểu bài toán | Xác định mốc cảnh báo cuối kỳ 1, người dùng CVHT, mục tiêu SMART, giả định chi phí | Phát biểu bài toán, RQ1–RQ4, hàm lợi ích | [Chương 1](#sec-ch1) |
+| 2. Hiểu dữ liệu | Kiểm tra cấu trúc, nhãn, phân phối; xác định thời điểm có sẵn của từng nhóm biến | Bảng nhóm biến, EDA, định nghĩa kịch bản | [Chương 3](#sec-ch3) |
+| 3. Chuẩn bị dữ liệu | Kiểm soát rò rỉ, làm sạch, tạo đặc trưng tỷ lệ, dựng pipeline, chia Dev/Test | Pipeline tiền xử lý, bảng đặc trưng | [Chương 3](#sec-ch3) |
+| 4. Mô hình hóa | So sánh LR, RF, XGB; baseline; tối ưu Optuna; kiểm tra quá khớp; chọn mô hình | Mô hình LR đã chọn | [Chương 4](#sec-ch4) |
+| 5. Đánh giá | Kiểm thử độc lập, chọn ngưỡng trên OOF, SHAP, lát cắt nhóm | Bảng hiệu năng, hai ngưỡng, phân tích công bằng | [Chương 5](#sec-ch5) |
+| 6. Triển khai mẫu | Đóng gói pipeline và giao diện Streamlit cho CVHT; đề xuất quy trình vận hành | `models/artifacts/`, `app.py`, quy trình thí điểm | [Chương 6](#sec-ch6) |
 
 : Ánh xạ CRISP-DM vào đồ án {#tbl-crisp}
 
@@ -263,24 +264,24 @@ Chương này trình bày khung quy trình nghiên cứu, các nguyên tắc thi
 
 **Cách đọc @fig-crispdm.** Sáu ô được đánh số từ 1 đến 6, đọc từ trái sang phải; mỗi ô có tên giai đoạn và hai dòng mô tả hoạt động chính trong đồ án (ví dụ ô 2 ghi "4.424 hồ sơ UCI, EDA và rà soát nhãn", ô 4 ghi "So sánh LR, RF, XGB, tối ưu bằng Optuna"). Màu của ô chỉ để phân biệt giai đoạn, không mang ý nghĩa mức độ. Mũi tên nhỏ giữa các ô là luồng công việc chính. Đường gấp khúc ở dưới đi từ ô 6 (Triển khai) quay lại ô 1 (Hiểu bài toán), kèm chú thích rằng kết quả đánh giá và phản hồi vận hành có thể dẫn đến việc xem lại dữ liệu, mục tiêu hoặc mô hình.
 
-**Vòng lặp trong đồ án.** Việc đối chiếu giữa thời điểm có thông tin (giai đoạn 2) và yêu cầu nghiệp vụ "cảnh báo đủ sớm" (giai đoạn 1) đã dẫn tới việc loại hai biến tài chính và chọn S1 (Mục 3.2). Ở chiều ngược lại, một lần thí điểm thực tế sẽ tạo phản hồi mới về chất lượng dữ liệu, tải công việc của CVHT và mức phù hợp của ngưỡng.
+**Vòng lặp trong đồ án.** Việc đối chiếu giữa thời điểm có thông tin (giai đoạn 2) và yêu cầu nghiệp vụ "cảnh báo đủ sớm" (giai đoạn 1) đã dẫn tới việc loại hai biến tài chính và chọn S1 ([Mục 3.2](#sec-scenarios)). Ở chiều ngược lại, một lần thí điểm thực tế sẽ tạo phản hồi mới về chất lượng dữ liệu, tải công việc của CVHT và mức phù hợp của ngưỡng.
 
-## Nguyên tắc thiết kế thí nghiệm
+## Nguyên tắc thiết kế thí nghiệm {#sec-exp-design}
 
-### Phân loại nhị phân và mã hóa nhãn
+### Phân loại nhị phân và mã hóa nhãn {#sec-binary-label}
 
-Nhãn `Target` gốc có ba giá trị. Vì mục tiêu là cảnh báo nghỉ học, bài toán được rút về nhị phân: `Graduate` mã hóa 0, `Dropout` mã hóa 1 (lớp dương). `Enrolled` là trạng thái "đang học tại thời điểm thu thập"; vì kết cục cuối cùng chưa biết, đưa nhóm này vào huấn luyện với một nhãn gán tạm sẽ làm lệch mô hình, nên nhóm này chỉ được chấm điểm. Hệ quả là mọi số liệu hiệu năng trong báo cáo chỉ phản ánh nhóm đã có kết cục cuối (Mục 6.3 bàn lại giới hạn này). Tỷ lệ lớp dương trong tập có nhãn là 39,1%, tức mất cân bằng nhẹ; vì vậy đồ án dùng trọng số lớp (`class_weight`) cho một kiểm tra độ nhạy riêng thay vì sinh mẫu tổng hợp (Mục 4.2).
+Nhãn `Target` gốc có ba giá trị. Vì mục tiêu là cảnh báo nghỉ học, bài toán được rút về nhị phân: `Graduate` mã hóa 0, `Dropout` mã hóa 1 (lớp dương). `Enrolled` là trạng thái "đang học tại thời điểm thu thập"; vì kết cục cuối cùng chưa biết, đưa nhóm này vào huấn luyện với một nhãn gán tạm sẽ làm lệch mô hình, nên nhóm này chỉ được chấm điểm. Hệ quả là mọi số liệu hiệu năng trong báo cáo chỉ phản ánh nhóm đã có kết cục cuối ([Mục 6.3](#sec-limits) bàn lại giới hạn này). Tỷ lệ lớp dương trong tập có nhãn là 39,1%, tức mất cân bằng nhẹ; vì vậy đồ án dùng trọng số lớp (`class_weight`) cho một kiểm tra độ nhạy riêng thay vì sinh mẫu tổng hợp ([Mục 4.2](#sec-baselines)).
 
-### Tập phát triển, tập kiểm thử và kiểm định chéo
+### Tập phát triển, tập kiểm thử và kiểm định chéo {#sec-split-cv}
 
 Một mô hình đánh giá trên chính dữ liệu đã huấn luyện sẽ cho kết quả lạc quan. Vì vậy dữ liệu có nhãn được chia thành hai phần có vai trò khác nhau:
 
 - **Tập phát triển (Dev, 80%)** dùng cho mọi quyết định thiết kế: so sánh kịch bản, so sánh mô hình, tinh chỉnh siêu tham số, chọn ngưỡng.
 - **Tập kiểm thử (Test, 20%)** được giữ riêng và chỉ dùng để báo cáo kết quả sau khi mọi lựa chọn đã cố định.
 
-Bên trong Dev, **stratified $k$-fold cross-validation** với $k=5$ chia Dev thành năm phần có tỷ lệ lớp gần bằng nhau; lần lượt mỗi phần làm tập xác nhận và bốn phần còn lại làm tập huấn luyện. Điểm CV là trung bình qua năm lần, và độ lệch chuẩn qua các fold cho biết mức dao động [@hastie2009]. Dự báo **out-of-fold (OOF)** là xác suất của mỗi mẫu Dev do mô hình chưa từng thấy mẫu đó tạo ra; ghép năm phần lại được một dự báo cho toàn bộ Dev mà không bị lạc quan, nên phù hợp để chọn ngưỡng. Chia theo hồ sơ ngẫu nhiên không mô phỏng việc dự báo cho một khóa tuyển sinh mới; đây là một giới hạn được nêu lại ở Mục 6.3.
+Bên trong Dev, **stratified $k$-fold cross-validation** với $k=5$ chia Dev thành năm phần có tỷ lệ lớp gần bằng nhau; lần lượt mỗi phần làm tập xác nhận và bốn phần còn lại làm tập huấn luyện. Điểm CV là trung bình qua năm lần, và độ lệch chuẩn qua các fold cho biết mức dao động [@hastie2009]. Dự báo **out-of-fold (OOF)** là xác suất của mỗi mẫu Dev do mô hình chưa từng thấy mẫu đó tạo ra; ghép năm phần lại được một dự báo cho toàn bộ Dev mà không bị lạc quan, nên phù hợp để chọn ngưỡng. Chia theo hồ sơ ngẫu nhiên không mô phỏng việc dự báo cho một khóa tuyển sinh mới; đây là một giới hạn được nêu lại ở [Mục 6.3](#sec-limits).
 
-### Rò rỉ dữ liệu
+### Rò rỉ dữ liệu {#sec-leakage-theory}
 
 Rò rỉ (leakage) là việc thông tin không có tại thời điểm dự báo lọt vào quá trình học hoặc đánh giá, làm kết quả đẹp hơn thực tế. Đồ án kiểm soát ba dạng:
 
@@ -288,7 +289,7 @@ Rò rỉ (leakage) là việc thông tin không có tại thời điểm dự b�
 2. **Rò rỉ nhãn:** để cột `Target` hoặc biến suy ra trực tiếp từ nó lọt vào đầu vào.
 3. **Rò rỉ tiền xử lý:** fit bộ chuẩn hóa hoặc bộ điền thiếu trên toàn bộ dữ liệu, khiến thống kê của tập xác nhận/kiểm thử ảnh hưởng đến việc học tham số. Cách xử lý là đặt mọi bước fit vào pipeline và chỉ fit trên phần huấn luyện của từng fold.
 
-## Các thuật toán và tối ưu siêu tham số
+## Các thuật toán và tối ưu siêu tham số {#sec-algorithms}
 
 Ba họ mô hình được so sánh trên cùng đầu vào và cùng quy trình CV: một mô hình tuyến tính dễ kiểm tra và hai mô hình dựa trên cây có khả năng bắt tương tác phi tuyến.
 
@@ -298,14 +299,14 @@ $$
 $$
 Tham số được học bằng cách cực tiểu hóa log-loss cộng một thành phần điều chuẩn phạt các hệ số lớn; mức điều chuẩn là một siêu tham số được Optuna tìm. Hệ số $\beta_j$ cho biết $x_j$ tăng một đơn vị (sau chuẩn hóa) làm log-odds $\ln\frac{\hat p}{1-\hat p}$ đổi bao nhiêu, nên mô hình dễ kiểm tra và kích thước rất nhỏ. Nhược điểm là không tự bắt được tương tác phi tuyến giữa các biến.
 
-**Random Forest (RF)** huấn luyện nhiều cây quyết định, mỗi cây trên một mẫu bootstrap và mỗi lần tách chỉ xét một tập con ngẫu nhiên của đặc trưng, rồi lấy trung bình dự báo [@breiman2001]. Cách làm này giảm phương sai so với một cây đơn, nhưng cây sâu có thể khớp gần như hoàn hảo dữ liệu huấn luyện; điều đó được quan sát ở Mục 4.4.
+**Random Forest (RF)** huấn luyện nhiều cây quyết định, mỗi cây trên một mẫu bootstrap và mỗi lần tách chỉ xét một tập con ngẫu nhiên của đặc trưng, rồi lấy trung bình dự báo [@breiman2001]. Cách làm này giảm phương sai so với một cây đơn, nhưng cây sâu có thể khớp gần như hoàn hảo dữ liệu huấn luyện; điều đó được quan sát ở [Mục 4.4](#sec-selection).
 
 **XGBoost (XGB)** xây dựng các cây tuần tự, mỗi cây sửa phần sai số còn lại của các cây trước theo hướng gradient, có điều chuẩn trên độ phức tạp của cây và cài đặt tối ưu về tính toán [@chen2016]. Mô hình thường mạnh trên dữ liệu bảng nhưng có nhiều siêu tham số (tốc độ học, độ sâu, số vòng, tỷ lệ lấy mẫu) và khó đọc trực tiếp hơn LR.
 
 **Optuna** là khung tối ưu siêu tham số: người dùng viết một hàm mục tiêu nhận một "lượt thử" (trial), hàm này lấy mẫu siêu tham số từ miền tìm kiếm đã khai báo, huấn luyện và trả về điểm CV; Optuna dùng kết quả các lượt thử trước để chọn lượt thử sau [@akiba2019]. Trong đồ án mục tiêu là ROC-AUC CV và mỗi mô hình có 25 lượt thử.
 
 
-## Tiền xử lý dữ liệu
+## Tiền xử lý dữ liệu {#sec-preprocessing-theory}
 
 Các bước tiền xử lý được gói trong một pipeline của scikit-learn để áp dụng nhất quán cho huấn luyện, kiểm thử và ứng dụng [@scikit].
 
@@ -314,7 +315,7 @@ Các bước tiền xử lý được gói trong một pipeline của scikit-lea
 - **`SimpleImputer`** điền giá trị thiếu (trung vị cho biến số, giá trị phổ biến nhất cho biến phân loại). Dữ liệu hiện tại không có giá trị thiếu, nên bước này là dự phòng cho dữ liệu áp dụng sau này.
 - **Quy tắc IQR** đánh dấu ngoại lai khi $x<Q_1-1{,}5\,\text{IQR}$ hoặc $x>Q_3+1{,}5\,\text{IQR}$; đây là dấu hiệu để xem xét, không phải bằng chứng dữ liệu sai.
 
-## Chỉ số đánh giá
+## Chỉ số đánh giá {#sec-metrics}
 
 Với lớp dương là `Dropout`, mỗi dự báo nhị phân rơi vào một trong bốn ô của ma trận nhầm lẫn: TP (nghỉ học, được gắn cờ), FN (nghỉ học, bị bỏ sót), FP (không nghỉ học, bị gắn cờ nhầm) và TN (không nghỉ học, không gắn cờ). Các chỉ số phụ thuộc ngưỡng được định nghĩa như sau:
 
@@ -338,7 +339,7 @@ Tỷ lệ gắn cờ là $(TP+FP)/n$, tức tỷ lệ hồ sơ CVHT phải xem x
 
 : Các chỉ số đánh giá và ý nghĩa {#tbl-metrics}
 
-## Giải thích mô hình bằng SHAP
+## Giải thích mô hình bằng SHAP {#sec-shap-theory}
 
 SHAP gán cho mỗi đặc trưng $j$ một giá trị đóng góp $\phi_j$ dựa trên giá trị Shapley của lý thuyết trò chơi hợp tác: trung bình đóng góp biên của đặc trưng đó qua mọi thứ tự thêm đặc trưng vào mô hình [@lundberg2017],
 $$
@@ -348,11 +349,11 @@ với $F$ là tập đặc trưng. Tính cộng tính cho phép viết đầu ra
 
 Có ba điều cần nhớ khi đọc SHAP. Thứ nhất, giá trị SHAP mô tả cách *mô hình* dùng biến so với nền tham chiếu; chúng không xác lập nguyên nhân xã hội hay tác động của một can thiệp. Thứ hai, khi các biến tương quan mạnh (ví dụ số môn đăng ký và số môn đạt), phần đóng góp bị chia giữa chúng và dấu của từng biến phải được đọc cùng nhau. Thứ ba, SHAP đo đóng góp trên các cột sau tiền xử lý (kể cả cột one-hot), nên một ngành có thể xuất hiện như một đặc trưng riêng.
 
-## Công bằng thuật toán
+## Công bằng thuật toán {#sec-fairness-theory}
 
-Công bằng được kiểm tra bằng cách tính cùng một bộ chỉ số trên từng nhóm (giới tính, nhóm tuổi, học bổng) tại ngưỡng vận hành. Hai khái niệm thường gặp là **demographic parity** (tỷ lệ bị gắn cờ bằng nhau giữa các nhóm) và **equalized odds** (Recall và FPR bằng nhau giữa các nhóm). Khi tỷ lệ nghỉ học nền khác nhau giữa các nhóm, một mô hình không hoàn hảo nói chung không thể thỏa mãn đồng thời cả hai, nên lựa chọn chỉ tiêu phụ thuộc vào hậu quả của từng loại sai sót [@mehrabi2021; @barocas2023]. Trong bối cảnh cảnh báo hỗ trợ, FPR cao ở một nhóm nghĩa là nhóm đó bị gọi nhầm nhiều hơn, còn Recall thấp nghĩa là nhóm đó bị bỏ sót nhiều hơn; cả hai đều cần được theo dõi (Mục 5.4).
+Công bằng được kiểm tra bằng cách tính cùng một bộ chỉ số trên từng nhóm (giới tính, nhóm tuổi, học bổng) tại ngưỡng vận hành. Hai khái niệm thường gặp là **demographic parity** (tỷ lệ bị gắn cờ bằng nhau giữa các nhóm) và **equalized odds** (Recall và FPR bằng nhau giữa các nhóm). Khi tỷ lệ nghỉ học nền khác nhau giữa các nhóm, một mô hình không hoàn hảo nói chung không thể thỏa mãn đồng thời cả hai, nên lựa chọn chỉ tiêu phụ thuộc vào hậu quả của từng loại sai sót [@mehrabi2021; @barocas2023]. Trong bối cảnh cảnh báo hỗ trợ, FPR cao ở một nhóm nghĩa là nhóm đó bị gọi nhầm nhiều hơn, còn Recall thấp nghĩa là nhóm đó bị bỏ sót nhiều hơn; cả hai đều cần được theo dõi ([Mục 5.4](#sec-fairness-eval)).
 
-## Kiến trúc giải pháp
+## Kiến trúc giải pháp {#sec-arch}
 
 @fig-architecture đặt luồng dữ liệu và luồng sử dụng vào cùng một sơ đồ. Notebook chuẩn bị dữ liệu, tạo đặc trưng, huấn luyện và đánh giá; mô hình Logistic Regression đã chọn cùng cấu hình được lưu trong `models/artifacts/`. Ứng dụng Streamlit đọc các tạo tác này, nhận dữ liệu đầu vào, tính điểm, phân tầng và cung cấp phần giải thích SHAP. CVHT là người kiểm tra đầu ra và quyết định bước hỗ trợ.
 
@@ -363,9 +364,9 @@ Công bằng được kiểm tra bằng cách tính cùng một bộ chỉ số 
 Sơ đồ cũng làm rõ ranh giới vận hành: mô hình không kết nối trực tiếp với quyết định học vụ (dòng chú thích cuối hình nêu rõ mô hình chỉ hỗ trợ sàng lọc, không tự động quyết định kỷ luật, thôi học hoặc quyền lợi). Dữ liệu `Enrolled` chỉ được chấm điểm; vì chưa có nhãn cuối nên không thể dùng để tính hiệu năng. Kết quả xuất cần được bảo vệ như dữ liệu học tập nhạy cảm.
 
 
-# Dữ liệu và tiền xử lý
+# Dữ liệu và tiền xử lý {#sec-ch3}
 
-## Nguồn và cấu trúc dữ liệu
+## Nguồn và cấu trúc dữ liệu {#sec-data-source}
 
 Nguồn là bộ *Predict Students' Dropout and Academic Success* trên UCI Machine Learning Repository. Bộ dữ liệu có 4.424 dòng, 36 thuộc tính đầu vào và nhãn `Target` với ba giá trị `Graduate`, `Dropout`, `Enrolled`; UCI ghi nhận giấy phép CC BY 4.0 [@realinho2021]. Theo mô tả của các tác giả, dữ liệu được tổng hợp từ nhiều cơ sở dữ liệu của một cơ sở đào tạo bậc đại học tại Bồ Đào Nha, gồm sinh viên của nhiều ngành khác nhau như nông học, thiết kế, giáo dục, điều dưỡng, báo chí, quản lý, công tác xã hội và công nghệ [@realinho2022]; điều này khớp với các tên ngành xuất hiện trong @fig-group. Trong đồ án, `Graduate` được mã hóa 0, `Dropout` mã hóa 1; `Enrolled` chưa có nhãn cuối nên không tham gia huấn luyện hay đánh giá.
 
@@ -408,7 +409,7 @@ Tập có nhãn được chia ngẫu nhiên theo hồ sơ bằng stratified spli
 
 : Thành phần của bốn kịch bản thông tin theo thời điểm {#tbl-scenario-def}
 
-Các số trong cột cuối khớp với cách đếm trên 36 thuộc tính gốc: 21 thuộc tính hồ sơ trừ 2 biến nợ/học phí còn 19; cộng 3 chỉ số vĩ mô và `grade_gap` được 23 (S0); cộng 6 biến gốc kỳ 1 và 4 biến tỷ lệ kỳ 1 được 33 (S1); cộng 4 biến tài chính được 37 (S1F); S2 là 50 biến sau khi thêm các biến kỳ 2 và biến dẫn xuất tương ứng. Danh sách cột chính xác của S1 được lưu trong `models/artifacts/meta.json` (Phụ lục A).
+Các số trong cột cuối khớp với cách đếm trên 36 thuộc tính gốc: 21 thuộc tính hồ sơ trừ 2 biến nợ/học phí còn 19; cộng 3 chỉ số vĩ mô và `grade_gap` được 23 (S0); cộng 6 biến gốc kỳ 1 và 4 biến tỷ lệ kỳ 1 được 33 (S1); cộng 4 biến tài chính được 37 (S1F); S2 là 50 biến sau khi thêm các biến kỳ 2 và biến dẫn xuất tương ứng. Danh sách cột chính xác của S1 được lưu trong `models/artifacts/meta.json` ([Phụ lục A](#sec-app-a)).
 
 ![Bốn kịch bản thông tin theo thời điểm dự báo. Nguồn: tác giả tổng hợp từ cấu hình notebook.](reports/figures/scenario_timeline.png){#fig-timeline width=85%}
 
@@ -418,14 +419,14 @@ Các số trong cột cuối khớp với cách đếm trên 36 thuộc tính g�
 
 1. **Còn thời gian hỗ trợ.** Sau khi điểm học kỳ 1 khóa, vẫn còn học kỳ 2 để CVHT liên hệ và để sinh viên thay đổi cách học. Cảnh báo sau học kỳ 2 (S2) đến khi nhiều hồ sơ đã quyết định rời trường.
 2. **Mọi biến đều biết tại mốc dự báo.** Kết quả học kỳ 1 chỉ xuất hiện khi học kỳ 1 kết thúc, không thể dùng sớm hơn; S1 vì thế là mốc sớm nhất có kết quả học tập.
-3. **Loại các biến chưa rõ thời điểm.** Bộ dữ liệu không nói `Debtor` và `Tuition fees up to date` được ghi nhận lúc nào. Hai biến này có tương quan mô tả rất mạnh với nhãn (Mục 3.4), nên có thể phản ánh tình trạng đã diễn ra cùng với việc nghỉ học thay vì dấu hiệu báo trước. Chấp nhận mức AUC thấp hơn của S1 so với S1F đổi lấy một cảnh báo có thể bảo vệ được về mặt thời gian.
-4. **Lợi ích biên giảm dần.** Bước nhảy từ S0 lên S1 lớn, trong khi S1F và S2 chỉ tăng thêm rất ít (Mục 4.1, @tbl-delta-auc).
+3. **Loại các biến chưa rõ thời điểm.** Bộ dữ liệu không nói `Debtor` và `Tuition fees up to date` được ghi nhận lúc nào. Hai biến này có tương quan mô tả rất mạnh với nhãn ([Mục 3.4](#sec-eda)), nên có thể phản ánh tình trạng đã diễn ra cùng với việc nghỉ học thay vì dấu hiệu báo trước. Chấp nhận mức AUC thấp hơn của S1 so với S1F đổi lấy một cảnh báo có thể bảo vệ được về mặt thời gian.
+4. **Lợi ích biên giảm dần.** Bước nhảy từ S0 lên S1 lớn, trong khi S1F và S2 chỉ tăng thêm rất ít ([Mục 4.1](#sec-scenario-eval), @tbl-delta-auc).
 
-Trong S1 vẫn có `Scholarship holder`, thuộc nhóm tài chính nhưng nằm trong khối 19 thuộc tính hồ sơ/đầu vào theo cấu hình notebook. Báo cáo giữ biến này vì lý do đó; tại cơ sở thực tế cần xác minh thời điểm ghi nhận học bổng trước khi dùng (Mục 6.3).
+Trong S1 vẫn có `Scholarship holder`, thuộc nhóm tài chính nhưng nằm trong khối 19 thuộc tính hồ sơ/đầu vào theo cấu hình notebook. Báo cáo giữ biến này vì lý do đó; tại cơ sở thực tế cần xác minh thời điểm ghi nhận học bổng trước khi dùng ([Mục 6.3](#sec-limits)).
 
 **Vai trò của ba kịch bản còn lại.** S0 cho biết một cảnh báo ngay lúc nhập học (chưa có điểm) khả thi đến đâu. S1F là phép kiểm tra độ nhạy: nếu thông tin tài chính được xác nhận có sẵn đầu kỳ 2 thì có thể bổ sung bao nhiêu hiệu năng. S2 là mốc đối chứng muộn, dùng để thấy mức tăng AUC khi chấp nhận thông tin đến muộn. Cả ba chỉ phục vụ so sánh và không được trộn vào đầu vào của mô hình S1.
 
-## Nhóm biến
+## Nhóm biến {#sec-var-groups}
 
 | Nhóm | Ví dụ biến | Thời điểm/ghi chú | Có trong |
 |---|---|---|---|
@@ -439,11 +440,11 @@ Trong S1 vẫn có `Scholarship holder`, thuộc nhóm tài chính nhưng nằm 
 
 Có 33 đặc trưng đầu vào cho S1 theo pipeline: thông tin đầu vào, sáu biến gốc kỳ 1 và bốn biến tạo từ kỳ 1, cùng các biến khác có sẵn trước dự báo. Ba biến vĩ mô được giữ theo cấu hình notebook nhưng số mức quan sát hạn chế, nên không diễn giải như tín hiệu thời gian thực độc lập.
 
-## Khám phá dữ liệu
+## Khám phá dữ liệu {#sec-eda}
 
 Phần khám phá dữ liệu (EDA) trả lời ba câu hỏi: dữ liệu có những đặc điểm gì cần xử lý, biến nào có liên hệ với nhãn, và liên hệ đó đặt ra yêu cầu thiết kế gì. EDA được thực hiện bằng pandas, Matplotlib và seaborn [@pandas; @hunter2007; @waskom2021]. Mọi so sánh dưới đây là liên hệ thô trên dữ liệu có nhãn; chúng không kiểm soát yếu tố gây nhiễu và không chứng minh nguyên nhân.
 
-### Phân phối nhãn và tuổi nhập học
+### Phân phối nhãn và tuổi nhập học {#sec-eda-age}
 
 ![Phân phối nhãn và tuổi nhập học. Nguồn: phân tích của tác giả trên dữ liệu UCI.](reports/figures/eda_target_age.png){#fig-target-age width=80%}
 
@@ -451,9 +452,9 @@ Phần khám phá dữ liệu (EDA) trả lời ba câu hỏi: dữ liệu có n
 
 **Quan sát.** Trong 3.630 hồ sơ đã có kết quả, 2.209 người (60,9%) tốt nghiệp và 1.421 người (39,1%) nghỉ học; đây là tỷ lệ lớp trong dữ liệu phân tích, không phải tỷ lệ nghỉ học của toàn bộ sinh viên đại học. Ở histogram, cả hai nhóm tập trung nhiều ở tuổi nhập học khoảng 18–20 (cột cao nhất của Graduate ở mức xấp xỉ 0,2), nhưng phân phối `Dropout` có đuôi dài hơn về các tuổi cao và một số khoảng tuổi từ giữa 20 trở lên có tỷ trọng lớn hơn so với nhóm tốt nghiệp.
 
-**Hàm ý và thận trọng.** Hình gợi ý tuổi có liên hệ với kết quả cuối trong tập này; nó không chứng minh tuổi gây ra nghỉ học, cũng không cho phép gán hoàn cảnh gia đình hay việc làm cho từng sinh viên. Hàm ý phù hợp là hỏi về nhu cầu lịch học và hỗ trợ linh hoạt khi tư vấn, không dùng tuổi làm căn cứ hạn chế cơ hội. Vì tuổi là thuộc tính nhạy cảm, nó cũng được đưa vào phân tích công bằng ở Mục 5.4.
+**Hàm ý và thận trọng.** Hình gợi ý tuổi có liên hệ với kết quả cuối trong tập này; nó không chứng minh tuổi gây ra nghỉ học, cũng không cho phép gán hoàn cảnh gia đình hay việc làm cho từng sinh viên. Hàm ý phù hợp là hỏi về nhu cầu lịch học và hỗ trợ linh hoạt khi tư vấn, không dùng tuổi làm căn cứ hạn chế cơ hội. Vì tuổi là thuộc tính nhạy cảm, nó cũng được đưa vào phân tích công bằng ở [Mục 5.4](#sec-fairness-eval).
 
-### Tỷ lệ nghỉ học theo nhóm phân loại
+### Tỷ lệ nghỉ học theo nhóm phân loại {#sec-eda-group}
 
 ![Tỷ lệ nghỉ học theo nhóm phân loại.](reports/figures/eda_dropout_by_group.png){#fig-group width=80%}
 
@@ -463,9 +464,9 @@ Phần khám phá dữ liệu (EDA) trả lời ba câu hỏi: dữ liệu có n
 
 **Quan sát theo ba biến tài chính.** Tỷ lệ `Dropout` là khoảng 48% ở nhóm không có học bổng ($n=2.661$) và 14% ở nhóm có học bổng ($n=969$). Nhóm đang nợ có khoảng 76% ($n=413$) so với 34% ở nhóm không nợ ($n=3.217$). Nhóm học phí chưa đủ có khoảng 94% ($n=486$) so với 31% ở nhóm đã đóng đủ ($n=3.144$).
 
-**Hàm ý và thận trọng.** Chênh lệch ở nợ và học phí rất lớn, nhưng thời điểm đo của hai biến này không rõ nên chúng không được đưa vào S1 (Mục 3.2). Các so sánh trên là liên hệ thô, có thể chịu ảnh hưởng của ngành, thời điểm và cơ cấu hồ sơ; không thể diễn giải rằng học bổng tự nó làm giảm nghỉ học. Hình này giúp xác định lát cắt cần kiểm toán công bằng và đặt câu hỏi hỗ trợ, chứ không phải cơ sở để tự động phân bổ hay từ chối quyền lợi.
+**Hàm ý và thận trọng.** Chênh lệch ở nợ và học phí rất lớn, nhưng thời điểm đo của hai biến này không rõ nên chúng không được đưa vào S1 ([Mục 3.2](#sec-scenarios)). Các so sánh trên là liên hệ thô, có thể chịu ảnh hưởng của ngành, thời điểm và cơ cấu hồ sơ; không thể diễn giải rằng học bổng tự nó làm giảm nghỉ học. Hình này giúp xác định lát cắt cần kiểm toán công bằng và đặt câu hỏi hỗ trợ, chứ không phải cơ sở để tự động phân bổ hay từ chối quyền lợi.
 
-### Quan hệ đa biến của kết quả học kỳ 1
+### Quan hệ đa biến của kết quả học kỳ 1 {#sec-eda-multi}
 
 ![Quan hệ đa biến của kết quả kỳ 1.](reports/figures/eda_multivariate.png){#fig-multi width=70%}
 
@@ -482,11 +483,11 @@ Phần khám phá dữ liệu (EDA) trả lời ba câu hỏi: dữ liệu có n
 
 **Quan sát.** Có hai xu hướng rõ. Thứ nhất, tỷ lệ giảm mạnh khi số môn đạt tăng: từ trên 90% ở nhóm đạt 1–2 môn xuống 20% ở nhóm đạt từ 5 môn (không học bổng), và từ 90% xuống 7% ở nhóm có học bổng. Thứ hai, ở mọi mức tiến độ, nhóm có học bổng có tỷ lệ thấp hơn nhóm không có. Tổng các ô khớp với cỡ mẫu của @fig-group (584+192+395+1.490 = 2.661 và 63+20+69+817 = 969).
 
-**Điểm chưa đơn điệu cần ghi nhận.** Tỷ lệ ở nhóm đạt 0 môn (91% và 57%) *thấp hơn* nhóm đạt 1–2 môn (97% và 90%), tức không đơn điệu giảm theo số môn đạt. Dữ liệu hiện có chưa đủ để giải thích; một giả thuyết cần kiểm tra là nhóm 0 môn có lẫn hồ sơ không đăng ký hoặc không có lượt đánh giá nào, và thuộc tính này được mô hình nắm bắt qua các biến như `s1_ghost` (Mục 3.5). Nhóm có học bổng đạt 1–2 môn chỉ có 20 hồ sơ nên độ bất định rất cao.
+**Điểm chưa đơn điệu cần ghi nhận.** Tỷ lệ ở nhóm đạt 0 môn (91% và 57%) *thấp hơn* nhóm đạt 1–2 môn (97% và 90%), tức không đơn điệu giảm theo số môn đạt. Dữ liệu hiện có chưa đủ để giải thích; một giả thuyết cần kiểm tra là nhóm 0 môn có lẫn hồ sơ không đăng ký hoặc không có lượt đánh giá nào, và thuộc tính này được mô hình nắm bắt qua các biến như `s1_ghost` ([Mục 3.5](#sec-clean-feat)). Nhóm có học bổng đạt 1–2 môn chỉ có 20 hồ sơ nên độ bất định rất cao.
 
 **Hàm ý.** Đây là tương quan phân nhóm, không kiểm soát các yếu tố khác và không chứng minh học bổng hay số môn đạt là nguyên nhân. Trong quy trình tư vấn, số môn chưa đạt hoặc vắng đánh giá có thể giúp CVHT bắt đầu xác minh khó khăn cụ thể.
 
-### Tương quan giữa các biến định lượng
+### Tương quan giữa các biến định lượng {#sec-eda-corr}
 
 ![Tương quan giữa các biến định lượng.](reports/figures/eda_correlation.png){#fig-corr width=85%}
 
@@ -496,24 +497,24 @@ Phần khám phá dữ liệu (EDA) trả lời ba câu hỏi: dữ liệu có n
 
 **Quan sát ma trận bên phải.** Bốn biến học tập (số môn đạt và điểm của hai kỳ) tạo thành một khối đỏ đậm: số môn đạt kỳ 1 và kỳ 2 có $\rho$ khoảng 0,91, và số môn đạt cũng tương quan mạnh với điểm số cùng kỳ. Hàng và cột của nhãn có màu xanh ở các biến học tập và đỏ ở tuổi, nợ, giới tính, đúng như biểu đồ trái.
 
-**Hàm ý.** Các cặp tương quan cao chứa thông tin chồng lấp; điều chuẩn trong LR và pipeline giúp kiểm soát việc học, nhưng không biến các hệ số thành bằng chứng độc lập, và khi đọc SHAP phải đọc các biến này cùng nhau (Mục 5.3). Các biến kỳ 2 trong hình chỉ dùng cho khám phá và đối chứng muộn, tuyệt đối không đưa vào S1. Ba biến kinh tế vĩ mô chỉ có 9–10 giá trị rời rạc, nên không thể xem như đo lường riêng biệt ở cấp sinh viên.
+**Hàm ý.** Các cặp tương quan cao chứa thông tin chồng lấp; điều chuẩn trong LR và pipeline giúp kiểm soát việc học, nhưng không biến các hệ số thành bằng chứng độc lập, và khi đọc SHAP phải đọc các biến này cùng nhau ([Mục 5.3](#sec-shap-eval)). Các biến kỳ 2 trong hình chỉ dùng cho khám phá và đối chứng muộn, tuyệt đối không đưa vào S1. Ba biến kinh tế vĩ mô chỉ có 9–10 giá trị rời rạc, nên không thể xem như đo lường riêng biệt ở cấp sinh viên.
 
-### Tổng hợp phát hiện EDA
+### Tổng hợp phát hiện EDA {#sec-eda-summary}
 
 | Phát hiện | Bằng chứng | Quyết định thiết kế |
 |---|---|---|
 | Kết quả học kỳ 1 mang nhiều tín hiệu nhất | $\rho\approx-0{,}62$ với số môn đạt; @tbl-heatmap | Chọn mốc cảnh báo sau kỳ 1 (S1) |
 | Nợ và học phí liên hệ rất mạnh nhưng thời điểm đo không rõ | 76% so với 34%; 94% so với 31% | Loại khỏi S1, giữ ở S1F để so sánh |
 | Biến kỳ 2 tương quan mạnh nhưng đến muộn | $\rho\approx-0{,}67$ | Chỉ dùng ở S2, không dùng cho S1 |
-| Có chênh lệch theo ngành, tuổi, giới tính, học bổng | @fig-group, @fig-target-age | Kiểm toán công bằng theo lát cắt (Mục 5.4) |
+| Có chênh lệch theo ngành, tuổi, giới tính, học bổng | @fig-group, @fig-target-age | Kiểm toán công bằng theo lát cắt ([Mục 5.4](#sec-fairness-eval)) |
 | Các biến học tập tương quan chồng lấp | $\rho\approx0{,}91$ giữa số môn đạt hai kỳ | Dùng điều chuẩn; đọc SHAP theo nhóm biến |
 | Biến vĩ mô có ít mức giá trị | 9–10 giá trị rời rạc | Giữ theo cấu hình nhưng không diễn giải như tín hiệu cá nhân |
 
 : Tổng hợp phát hiện EDA và quyết định thiết kế tương ứng {#tbl-eda-summary}
 
-## Làm sạch và tạo đặc trưng
+## Làm sạch và tạo đặc trưng {#sec-clean-feat}
 
-### Kiểm soát rò rỉ thời gian và nhãn
+### Kiểm soát rò rỉ thời gian và nhãn {#sec-leakage-ctrl}
 
 Thời điểm kịch bản dự báo quyết định biến nào được phép đưa vào mô hình. Những biến ghi nhận sau khi sinh viên đã hoàn tất hoặc rời chương trình có thể làm AUC cao hơn nhưng không khả dụng tại thời điểm cảnh báo. Thiết kế S1 vì vậy giữ các trường đầu vào và kết quả học kỳ 1; kết quả kỳ 2 chỉ xuất hiện trong kịch bản đối chứng S2. Hai trường nợ và học phí bị loại khỏi S1 do thời điểm đo chưa rõ.
 
@@ -527,13 +528,13 @@ Thời điểm kịch bản dự báo quyết định biến nào được phép
 
 : Kiểm soát rò rỉ thời gian và nhãn trong S1 {#tbl-leakage}
 
-Với cột `Target` có thể lọt vào tệp CSV do người dùng tải lên, ứng dụng chủ động loại cột này khỏi đầu vào trước khi chấm điểm (Mục 6.1).
+Với cột `Target` có thể lọt vào tệp CSV do người dùng tải lên, ứng dụng chủ động loại cột này khỏi đầu vào trước khi chấm điểm ([Mục 6.1](#sec-app)).
 
-### Chất lượng dữ liệu và ngoại lai
+### Chất lượng dữ liệu và ngoại lai {#sec-data-quality}
 
-Notebook kiểm tra dòng trùng hoàn toàn sau khi bỏ nhãn/kết quả và ghi nhận 0 dòng trùng; dữ liệu nguồn cũng không có giá trị thiếu trong lần chạy hiện tại, nên `SimpleImputer` chỉ là bước dự phòng cho dữ liệu áp dụng sau này. Quy tắc IQR (Mục 2.4) đánh dấu một số giá trị xa phần lớn quan sát, nhưng ngoại lai không đồng nghĩa với dữ liệu sai: tuổi nhập học cao hay số tín chỉ được công nhận lớn là các trường hợp hợp lý về nghiệp vụ. Vì vậy các giá trị này được xem xét và giữ lại, không bị xóa tự động; `RobustScaler` giúp giảm độ nhạy của mô hình với chúng. Biến phân loại được one-hot encode (Mục 2.4) [@scikit].
+Notebook kiểm tra dòng trùng hoàn toàn sau khi bỏ nhãn/kết quả và ghi nhận 0 dòng trùng; dữ liệu nguồn cũng không có giá trị thiếu trong lần chạy hiện tại, nên `SimpleImputer` chỉ là bước dự phòng cho dữ liệu áp dụng sau này. Quy tắc IQR ([Mục 2.4](#sec-preprocessing-theory)) đánh dấu một số giá trị xa phần lớn quan sát, nhưng ngoại lai không đồng nghĩa với dữ liệu sai: tuổi nhập học cao hay số tín chỉ được công nhận lớn là các trường hợp hợp lý về nghiệp vụ. Vì vậy các giá trị này được xem xét và giữ lại, không bị xóa tự động; `RobustScaler` giúp giảm độ nhạy của mô hình với chúng. Biến phân loại được one-hot encode ([Mục 2.4](#sec-preprocessing-theory)) [@scikit].
 
-### Tạo đặc trưng
+### Tạo đặc trưng {#sec-feat-eng}
 
 Các đặc trưng tạo mới nhằm cung cấp cách biểu diễn có ý nghĩa nghiệp vụ hơn các số đếm tuyệt đối: ví dụ "đạt 3 môn" mang ý nghĩa rất khác nhau với sinh viên đăng ký 3 môn và đăng ký 8 môn. Không có gì bảo đảm mọi biến mới đều hữu ích; đóng góp của chúng được kiểm chứng gián tiếp qua baseline và SHAP.
 
@@ -551,16 +552,16 @@ Các đặc trưng tạo mới nhằm cung cấp cách biểu diễn có ý ngh�
 
 Các phép chia có mẫu số 0 được quy về 0 trong hàm tiện ích. Các biến này chỉ dùng dữ liệu trong cùng hồ sơ, nên không trộn thông tin giữa train/test, nhưng chúng có quan hệ toán học với biến gốc và không được xem là bằng chứng độc lập. Sức mạnh của nhóm biến tỷ lệ thể hiện ở baseline: một luật chỉ dùng `s1_approval_rate` đã đạt ROC-AUC CV 0,880 (@tbl-baselines). Kịch bản muộn tạo thêm biến tương tự cho kỳ 2 (`s2_*`), chênh lệch giữa kỳ (`d_*`) và hai đặc trưng tài chính (`fin_risk`, `fin_no_aid`); các biến đó phục vụ S1F/S2, không dùng cho S1. `grade_gap` là hiệu giữa điểm đầu vào và điểm bằng cấp trước, có tương quan Spearman với nhãn gần 0 trong output hiện tại ($-0{,}009$), nên không nên mô tả là tín hiệu dự báo mạnh.
 
-### Pipeline chống rò rỉ
+### Pipeline chống rò rỉ {#sec-pipeline}
 
 Các bước `fit` của tiền xử lý (điền thiếu, `RobustScaler`, one-hot và gộp mức hiếm) cùng mô hình chỉ diễn ra trên phần train của từng fold; riêng bước tạo đặc trưng tỷ lệ chỉ dùng dữ liệu trong từng hồ sơ nên không cần fit. Điều này ngăn thông tin về phân phối của validation hoặc test tác động ngược vào việc học tham số biến đổi. Sau khi lựa chọn mô hình và ngưỡng trên tập phát triển, test độc lập chỉ được dùng để báo cáo đánh giá cuối.
 
 
-# Thiết kế và lựa chọn mô hình
+# Thiết kế và lựa chọn mô hình {#sec-ch4}
 
-## Kịch bản theo thời điểm dự báo
+## Kịch bản theo thời điểm dự báo {#sec-scenario-eval}
 
-Mục 3.2 đã định nghĩa bốn kịch bản; mục này đo hiệu năng của chúng. Mỗi kịch bản được huấn luyện bằng LR và XGB trên Dev với cùng 5-fold CV.
+[Mục 3.2](#sec-scenarios) đã định nghĩa bốn kịch bản; mục này đo hiệu năng của chúng. Mỗi kịch bản được huấn luyện bằng LR và XGB trên Dev với cùng 5-fold CV.
 
 ![So sánh ROC-AUC theo thời điểm dự báo.](reports/figures/scenario_comparison.png){#fig-scenario width=80%}
 
@@ -585,7 +586,7 @@ Mục 3.2 đã định nghĩa bốn kịch bản; mục này đo hiệu năng c�
 
 **Quan sát và diễn giải.** S0, chỉ dùng thông tin lúc nhập học, đạt 0,800 (LR) và 0,811 (XGB), cho thấy hồ sơ đầu vào đã có tín hiệu nhưng còn hạn chế. Khi bổ sung kết quả học kỳ 1, S1 tăng lên 0,919 và 0,920, một bước nhảy khoảng 0,11–0,12; đây là bước tăng lớn nhất của cả bốn kịch bản. S1F đạt 0,932 và 0,934, còn S2 đạt 0,945 và 0,951, nhưng mỗi bước thêm chỉ nâng AUC khoảng 0,01–0,03. Phần tăng thêm này đi cùng biến tài chính có thời điểm ghi nhận không chắc chắn hoặc kết quả kỳ 2 đã phát sinh muộn; hiệu năng cao hơn không đồng nghĩa với phù hợp hơn cho cảnh báo sớm. Ngoài ra, hai mô hình LR và XGB gần như ngang nhau ở mọi kịch bản (chênh không quá 0,011 ở S0, 0,001–0,006 ở các kịch bản còn lại), nên lựa chọn kịch bản ảnh hưởng đến hiệu năng nhiều hơn lựa chọn thuật toán. S1 được chọn vì có thể chạy ngay đầu kỳ 2 và còn đủ thời gian để CVHT liên hệ. S0/S1F/S2 là các kịch bản so sánh; chúng không được trộn thành đầu vào của mô hình S1. Giới hạn thông tin theo thời điểm giúp tránh temporal leakage [@kabakchieva2013; @migueis2018].
 
-## Baseline và mô hình mặc định
+## Baseline và mô hình mặc định {#sec-baselines}
 
 Các baseline trả lời câu hỏi liệu mô hình phức tạp có cải thiện so với một quy tắc đơn giản hay không. Dummy phản ánh mốc không có năng lực phân biệt, nên AUC bằng 0,5; heuristic chỉ dùng tỷ lệ môn đạt để tạo mốc nghiệp vụ dễ hiểu mà không cần học máy; Logistic Regression mặc định là baseline học máy có điều chuẩn. So sánh này giúp tránh chỉ báo cáo kết quả của mô hình tối ưu nhất.
 
@@ -603,7 +604,7 @@ Ba thuật toán LR, RF và XGB được so sánh trên cùng 33 biến S1 và c
 
 Notebook còn đối chiếu LR với `class_weight=None` và `class_weight="balanced"`. Trên CV, ROC-AUC đều xấp xỉ 0,919; ở ngưỡng 0,50, Recall tăng từ 0,777 lên 0,827 khi cân bằng trọng số lớp. Trọng số lớp chỉ làm thay đổi cách mô hình phạt lỗi, không tạo hồ sơ tổng hợp, nên đồ án không dùng SMOTE. Kết quả này cũng cho thấy việc chọn ngưỡng quan trọng hơn việc cân bằng lớp khi mục tiêu là Recall. Đây là một kiểm tra độ nhạy riêng; mô hình cuối và ngưỡng vận hành vẫn được chọn theo quy trình đánh giá đã mô tả.
 
-## Tinh chỉnh siêu tham số bằng Optuna
+## Tinh chỉnh siêu tham số bằng Optuna {#sec-optuna}
 
 Optuna tối ưu ROC-AUC CV cho LR, RF và XGBoost, mỗi thuật toán 25 lượt thử, mỗi lượt đánh giá bằng cùng 5-fold CV trên Dev. Tập Test không tham gia quá trình này. Kết quả CV sau tinh chỉnh lần lượt là 0,9190, 0,9207 và 0,9244 (so với khoảng 0,919, 0,920 và 0,920 khi dùng tham số mặc định).
 
@@ -616,7 +617,7 @@ Optuna tối ưu ROC-AUC CV cho LR, RF và XGBoost, mỗi thuật toán 25 lư�
 
 **Diễn giải.** Tinh chỉnh chỉ có tác dụng đáng kể với XGBoost (khoảng +0,004); với LR, siêu tham số gần như không thay đổi kết quả, phù hợp với việc LR là mô hình ít linh hoạt. Mức chênh giữa ba mô hình sau tinh chỉnh (tối đa 0,0054) nhỏ hơn độ lệch chuẩn qua fold của LR mặc định (0,008), nên trên CV ba mô hình chưa thể được xếp hạng chắc chắn. Đây là cơ sở để dùng các tiêu chí ngoài AUC khi chọn mô hình cuối.
 
-## Quá khớp và quy tắc chọn
+## Quá khớp và quy tắc chọn {#sec-selection}
 
 ![Learning curves của ba mô hình.](reports/figures/learning_curves.png){#fig-learning width=90%}
 
@@ -641,11 +642,11 @@ Optuna tối ưu ROC-AUC CV cho LR, RF và XGBoost, mỗi thuật toán 25 lư�
 
 Theo quy tắc này LR được chọn: độ trễ thấp nhất và kích thước 0,0121 MiB cũng nhỏ nhất trong ba mô hình, dù AUC CV thấp hơn XGBoost 0,0054. Đây là benchmark trên máy phát triển và không bao gồm giao diện/SHAP; thời gian có thể thay đổi theo môi trường.
 
-**Độ nhạy của quy tắc.** Kết quả phụ thuộc vào `AUC_TOL`. Chênh lệch AUC giữa LR và XGB là 0,0054, nên nếu dung sai đặt nhỏ hơn 0,0054 thì LR bị loại ở bước 2 và XGB sẽ được chọn. Dung sai 0,01 là một lựa chọn thiết kế, gần với độ lệch chuẩn qua fold (0,008) nên có cơ sở thống kê, nhưng cần được nêu rõ. Ngoài ra, chênh lệch độ trễ giữa các mô hình (cao nhất 0,25 ms/hồ sơ) không có ý nghĩa thực tế với lô vài nghìn hồ sơ; ở đây tiêu chí độ trễ đóng vai trò tiêu chí phân định hơn là ràng buộc cứng. Lý do thực chất để ưu tiên LR còn nằm ở tính minh bạch: mô hình tuyến tính có hệ số đọc trực tiếp, SHAP chính xác và nhẹ, kích thước nhỏ, dễ kiểm toán và dễ đóng gói trong ứng dụng. Cái giá là hiệu năng thấp hơn một chút trên tập kiểm thử (Mục 5.1), điều mà người quyết định có thể cân nhắc lại.
+**Độ nhạy của quy tắc.** Kết quả phụ thuộc vào `AUC_TOL`. Chênh lệch AUC giữa LR và XGB là 0,0054, nên nếu dung sai đặt nhỏ hơn 0,0054 thì LR bị loại ở bước 2 và XGB sẽ được chọn. Dung sai 0,01 là một lựa chọn thiết kế, gần với độ lệch chuẩn qua fold (0,008) nên có cơ sở thống kê, nhưng cần được nêu rõ. Ngoài ra, chênh lệch độ trễ giữa các mô hình (cao nhất 0,25 ms/hồ sơ) không có ý nghĩa thực tế với lô vài nghìn hồ sơ; ở đây tiêu chí độ trễ đóng vai trò tiêu chí phân định hơn là ràng buộc cứng. Lý do thực chất để ưu tiên LR còn nằm ở tính minh bạch: mô hình tuyến tính có hệ số đọc trực tiếp, SHAP chính xác và nhẹ, kích thước nhỏ, dễ kiểm toán và dễ đóng gói trong ứng dụng. Cái giá là hiệu năng thấp hơn một chút trên tập kiểm thử ([Mục 5.1](#sec-test-perf)), điều mà người quyết định có thể cân nhắc lại.
 
-# Đánh giá, giải thích và đạo đức
+# Đánh giá, giải thích và đạo đức {#sec-ch5}
 
-## Hiệu năng trên tập kiểm thử
+## Hiệu năng trên tập kiểm thử {#sec-test-perf}
 
 Mô hình LR tinh chỉnh được fit trên Dev; tập Test 726 hồ sơ được giữ riêng. Bốn nhóm chỉ số trong bảng trả lời các câu hỏi khác nhau (@tbl-metrics): ROC-AUC và Average Precision đo khả năng xếp hạng qua mọi ngưỡng; Precision, Recall và tỷ lệ gắn cờ phụ thuộc ngưỡng đã chọn trên OOF Dev; Accuracy chỉ để tham khảo, không dùng một mình để chọn ngưỡng. Với tỷ lệ lớp không cân bằng hoàn toàn, đường PR giúp quan sát trực tiếp trade-off trên lớp dương [@saito2015; @davis2006].
 
@@ -660,7 +661,7 @@ Mô hình LR tinh chỉnh được fit trên Dev; tập Test 726 hồ sơ đư�
 
 **Cách đọc bảng.** Hai cột ROC-AUC và AP so sánh được giữa các mô hình vì không phụ thuộc ngưỡng. Các cột còn lại *không* so sánh trực tiếp được, vì mỗi mô hình dùng ngưỡng riêng chọn trên OOF Dev (0,19; 0,22; 0,20) và do đó gắn cờ số hồ sơ khác nhau (55,4%; 49,9%; 51,9%). Ví dụ Recall của LR (0,940) cao nhất chủ yếu vì LR gắn cờ nhiều hồ sơ hơn, không phải vì LR xếp hạng tốt hơn. LR mặc định và LR tinh chỉnh cho kết quả giống hệt nhau, nhất quán với việc tinh chỉnh gần như không đổi LR ở @fig-optuna.
 
-**So sánh mô hình.** Về xếp hạng, XGB (0,939; AP 0,929) và RF (0,936; AP 0,924) nhỉnh hơn LR (0,931; AP 0,916) lần lượt 0,008 và 0,005 ROC-AUC. Đó là cái giá của việc chọn LR theo quy tắc ở Mục 4.4. Vì Test chỉ là một lần chia và chưa có khoảng tin cậy, đồ án không khẳng định các chênh lệch này có ý nghĩa thống kê; đồng thời mức 0,931 của LR vẫn vượt chỉ tiêu tham chiếu 0,90.
+**So sánh mô hình.** Về xếp hạng, XGB (0,939; AP 0,929) và RF (0,936; AP 0,924) nhỉnh hơn LR (0,931; AP 0,916) lần lượt 0,008 và 0,005 ROC-AUC. Đó là cái giá của việc chọn LR theo quy tắc ở [Mục 4.4](#sec-selection). Vì Test chỉ là một lần chia và chưa có khoảng tin cậy, đồ án không khẳng định các chênh lệch này có ý nghĩa thống kê; đồng thời mức 0,931 của LR vẫn vượt chỉ tiêu tham chiếu 0,90.
 
 ![ROC, PR và lợi ích ròng.](reports/figures/roc_pr_netbenefit.png){#fig-rocpr width=100%}
 
@@ -692,7 +693,7 @@ Mô hình LR tinh chỉnh được fit trên Dev; tập Test 726 hồ sơ đư�
 
 **Diễn giải.** Hạ ngưỡng từ 0,50 xuống 0,19 bắt thêm 43 ca nghỉ học (giảm số ca bị bỏ sót từ 60 xuống 17) nhưng phải gắn cờ thêm 130 hồ sơ, trong đó 87 là báo nhầm: tức mỗi ca nghỉ học bắt thêm "tốn" khoảng 3 hồ sơ cần rà soát thêm, trong đó khoảng 2 là báo nhầm. Accuracy giảm từ 85,1% xuống 79,1% dù mô hình hữu ích hơn theo hàm lợi ích (@tbl-nb-example); đây là lý do không dùng Accuracy một mình để chọn ngưỡng. Trong 402 hồ sơ bị gắn cờ ở 0,19, cứ 100 hồ sơ có khoảng 66 ca nghỉ học thật; trong 324 hồ sơ không bị gắn cờ, khoảng 95% (307/324) thật sự không nghỉ học. Biểu đồ thể hiện đúng đánh đổi giữa bỏ sót và khối lượng rà soát; chọn ngưỡng cuối cùng cần căn cứ năng lực tư vấn.
 
-## Hai ngưỡng quyết định và phân tầng
+## Hai ngưỡng quyết định và phân tầng {#sec-thresholds}
 
 **Phân tầng sử dụng trong ứng dụng.** Ứng dụng dùng hai ngưỡng để chia hồ sơ thành ba mức:
 
@@ -706,9 +707,9 @@ Mô hình LR tinh chỉnh được fit trên Dev; tập Test 726 hồ sơ đư�
 
 Ngưỡng Đỏ 0,62 được xác định trên OOF Dev là ngưỡng đầu tiên phía trên ngưỡng lợi ích ròng đạt Precision ít nhất 0,90. Vì vậy cần phân biệt ngưỡng nhị phân 0,19, dùng để tính Recall và quyết định "có cần xem xét hay không", với mức Đỏ 0,62, dùng để ưu tiên khẩn hơn. Hai ngưỡng phục vụ hai mục đích khác nhau: 0,19 đánh dấu cần xem xét trong bài toán nhị phân, còn 0,62 dành thứ tự ưu tiên liên hệ. Ngưỡng triển khai được lưu trong `models/artifacts/meta.json` và ứng dụng chỉ đọc chứ không tự tính lại.
 
-### Phân tích ngưỡng và hàm lợi ích
+### Phân tích ngưỡng và hàm lợi ích {#sec-threshold-benefit}
 
-Ngưỡng 0,50 là quy ước phân loại mặc định chứ không nhất thiết phù hợp với mục tiêu can thiệp. Ngưỡng 0,19 được tối ưu trên dự báo out-of-fold của Dev theo hàm lợi ích ròng với ba tham số chuẩn hóa $L=1$, $C=0{,}05$ và $S=0{,}30$ (Mục 1.6). Tại ngưỡng thấp hơn, hệ thống bắt được nhiều trường hợp hơn nhưng cũng chuyển thêm hồ sơ cho CVHT. Giá trị $S$ chưa được đo bằng thử nghiệm thực địa, vì vậy kết quả net benefit/ROI là phân tích kịch bản, không phải lợi ích tài chính đã quan sát.
+Ngưỡng 0,50 là quy ước phân loại mặc định chứ không nhất thiết phù hợp với mục tiêu can thiệp. Ngưỡng 0,19 được tối ưu trên dự báo out-of-fold của Dev theo hàm lợi ích ròng với ba tham số chuẩn hóa $L=1$, $C=0{,}05$ và $S=0{,}30$ ([Mục 1.6](#sec-benefit)). Tại ngưỡng thấp hơn, hệ thống bắt được nhiều trường hợp hơn nhưng cũng chuyển thêm hồ sơ cho CVHT. Giá trị $S$ chưa được đo bằng thử nghiệm thực địa, vì vậy kết quả net benefit/ROI là phân tích kịch bản, không phải lợi ích tài chính đã quan sát.
 
 Để thấy ngưỡng nhạy với giả định đến mức nào, @tbl-threshold-sens tính ngưỡng lý thuyết $C/(SL)$ cho vài tổ hợp tham số (với điều kiện xác suất mô hình được hiệu chỉnh tốt; đồ án chưa đánh giá hiệu chỉnh xác suất).
 
@@ -721,11 +722,11 @@ Ngưỡng 0,50 là quy ước phân loại mặc định chứ không nhất thi
 
 Bảng cho thấy nếu chi phí tư vấn gấp đôi ($C=0{,}10$) hoặc hiệu quả can thiệp thấp hơn ($S=0{,}20$), ngưỡng hợp lý dịch lên đáng kể, tức hệ thống nên gắn cờ ít hơn. Điều này giải thích vì sao ngưỡng phải được tính lại bằng số liệu thật của trường trước khi triển khai. Năng lực thực tế của đội CVHT cũng cần được dùng để hiệu chỉnh lại cả hai mức 0,19 và 0,62.
 
-## Giải thích dự báo
+## Giải thích dự báo {#sec-shap-eval}
 
 ![Tổng quan SHAP cho mô hình LR.](reports/figures/shap_summary.png){#fig-shap width=75%}
 
-**Cách đọc @fig-shap.** Đây là biểu đồ beeswarm SHAP toàn cục của LR trên Test. Mỗi chấm là một hồ sơ. Trục ngang là giá trị SHAP: đóng góp của đặc trưng vào đầu ra mô hình so với nền; chấm nằm bên phải số 0 đẩy đầu ra theo hướng Dropout, bên trái kéo ngược lại. Màu của chấm là giá trị của đặc trưng, từ thấp (xanh) đến cao (đỏ). Các đặc trưng được sắp từ trên xuống theo mức đóng góp trung bình tuyệt đối. Chấm xếp chồng theo chiều dọc ở nơi có nhiều hồ sơ có cùng đóng góp, nên các biến nhị phân tạo thành hai cụm. Như đã nêu ở Mục 2.6, thang trục cho thấy đầu ra là log-odds.
+**Cách đọc @fig-shap.** Đây là biểu đồ beeswarm SHAP toàn cục của LR trên Test. Mỗi chấm là một hồ sơ. Trục ngang là giá trị SHAP: đóng góp của đặc trưng vào đầu ra mô hình so với nền; chấm nằm bên phải số 0 đẩy đầu ra theo hướng Dropout, bên trái kéo ngược lại. Màu của chấm là giá trị của đặc trưng, từ thấp (xanh) đến cao (đỏ). Các đặc trưng được sắp từ trên xuống theo mức đóng góp trung bình tuyệt đối. Chấm xếp chồng theo chiều dọc ở nơi có nhiều hồ sơ có cùng đóng góp, nên các biến nhị phân tạo thành hai cụm. Như đã nêu ở [Mục 2.6](#sec-shap-theory), thang trục cho thấy đầu ra là log-odds.
 
 **Quan sát.** `Curricular units 1st sem (approved)` đứng đầu và trải rộng nhất: các giá trị cao (đỏ) chủ yếu nằm ở phía SHAP âm, còn giá trị thấp (xanh) trải về phía dương, nghĩa là trong mô hình này số môn đạt cao thường kéo giảm đầu ra Dropout, còn số môn đạt thấp thường đẩy đầu ra lên. Các vị trí tiếp theo là số môn đăng ký kỳ 1, số môn được công nhận tín chỉ, học bổng và điểm kỳ 1. Các điểm tập trung sát 0 cho thấy một số biến có đóng góp nhỏ ở nhiều hồ sơ, dù có thể quan trọng với một số trường hợp riêng. Dấu SHAP được đọc theo trục tác động vào đầu ra của mô hình; không đồng nhất giá trị âm với "xấu" nếu chưa xác định lớp đích.
 
@@ -740,9 +741,9 @@ Bảng cho thấy nếu chi phí tư vấn gấp đôi ($C=0{,}10$) hoặc hiệ
 
 : Một số đặc trưng nổi bật trong @fig-shap và cách đọc (mô tả từ hình, không mang ý nghĩa nhân quả) {#tbl-shap-features}
 
-**Thận trọng.** SHAP cho thấy mô hình đã sử dụng biến như thế nào; nó không chứng minh biến gây ra nghỉ học, và các biến tương quan có thể chia sẻ phần đóng góp [@lundberg2017]. Việc `Unemployment rate` và `GDP` xuất hiện trong nhóm biến đầu bảng là lý do để thận trọng: do ít mức giá trị, chúng có thể thay cho khóa tuyển sinh hoặc năm học, và đóng góp của chúng khó tách khỏi hiệu ứng khóa học. Giải thích cục bộ cho từng hồ sơ trong ứng dụng được trình bày ở Mục 6.1.
+**Thận trọng.** SHAP cho thấy mô hình đã sử dụng biến như thế nào; nó không chứng minh biến gây ra nghỉ học, và các biến tương quan có thể chia sẻ phần đóng góp [@lundberg2017]. Việc `Unemployment rate` và `GDP` xuất hiện trong nhóm biến đầu bảng là lý do để thận trọng: do ít mức giá trị, chúng có thể thay cho khóa tuyển sinh hoặc năm học, và đóng góp của chúng khó tách khỏi hiệu ứng khóa học. Giải thích cục bộ cho từng hồ sơ trong ứng dụng được trình bày ở [Mục 6.1](#sec-app).
 
-## Công bằng, quyền riêng tư và rủi ro
+## Công bằng, quyền riêng tư và rủi ro {#sec-fairness-eval}
 
 @tbl-fairness báo cáo giới tính, ba nhóm tuổi và học bổng trong Test tại ngưỡng 0,19. Các lát cắt khác (quốc tế, displaced, nhu cầu giáo dục đặc biệt, hôn nhân) cũng được tính trong notebook; nhóm có ít ca dương/âm không đưa vào bảng chính vì chỉ số thiếu ổn định. Các giá trị chưa kèm khoảng tin cậy hay kiểm định thống kê.
 
@@ -764,7 +765,7 @@ Cột "Ca Dropout (ước tính)" được tính bằng $n\times$ tỷ lệ Drop
 
 **Độ bất định.** Các chênh lệch này dựa trên một lần chia Test và cỡ mẫu nhỏ ở một số nhóm. Ví dụ nhóm có học bổng chỉ có khoảng 26 ca Dropout, nên Recall 88,5% tương ứng 23/26; chỉ cần sai một ca là con số đổi khoảng 3,8 điểm phần trăm. Nhóm tuổi $\le 19$ có khoảng 79 ca Dropout. Notebook chưa tính khoảng tin cậy hay kiểm định ý nghĩa thống kê, nên đây là tín hiệu cần điều tra chứ chưa chứng minh thiên vị. Các khái niệm demographic parity và equalized odds thường xung đột khi tỷ lệ nền khác nhau [@mehrabi2021; @barocas2023]. Các nhóm nhỏ (ví dụ sinh viên quốc tế, nhu cầu giáo dục đặc biệt) có số quan sát quá thấp để kết luận đáng tin.
 
-**Về việc dùng thuộc tính nhạy cảm làm đầu vào.** Giới tính và tuổi nhập học nằm trong 33 biến của S1 và xuất hiện trong biểu đồ SHAP. Báo cáo không thực hiện thí nghiệm loại các biến này để so sánh; đây là một hướng cần làm trước khi triển khai (Mục 6.3). Dù thế nào, các biến này không được dùng để hạn chế cơ hội hay quyền lợi của sinh viên.
+**Về việc dùng thuộc tính nhạy cảm làm đầu vào.** Giới tính và tuổi nhập học nằm trong 33 biến của S1 và xuất hiện trong biểu đồ SHAP. Báo cáo không thực hiện thí nghiệm loại các biến này để so sánh; đây là một hướng cần làm trước khi triển khai ([Mục 6.3](#sec-limits)). Dù thế nào, các biến này không được dùng để hạn chế cơ hội hay quyền lợi của sinh viên.
 
 | Rủi ro | Biểu hiện có thể xảy ra | Biện pháp đề xuất |
 |---|---|---|
@@ -778,9 +779,9 @@ Cột "Ca Dropout (ước tính)" được tính bằng $n\times$ tỷ lệ Drop
 
 Dữ liệu học tập và tài chính cần được giới hạn quyền truy cập, ưu tiên mã định danh thay cho tên trong danh sách chia sẻ, và có thời hạn lưu trữ rõ ràng. Hệ thống phải minh bạch mục đích, có cơ chế để CVHT kiểm tra và sửa dữ liệu, và không tự động quyết định kỷ luật, thôi học hay học bổng. Các nguyên tắc giám sát con người, quyền riêng tư và đánh giá tác động phù hợp với Khuyến nghị Đạo đức AI của UNESCO [@unesco2021].
 
-# Nguyên mẫu, triển khai và hướng phát triển
+# Nguyên mẫu, triển khai và hướng phát triển {#sec-ch6}
 
-## Ứng dụng mẫu
+## Ứng dụng mẫu {#sec-app}
 
 Ứng dụng Streamlit là prototype chuyển pipeline đã huấn luyện sang luồng hỗ trợ quyết định, chưa phải hệ thống tích hợp với SIS hay dịch vụ triển khai an toàn cho dữ liệu thật. Khi khởi động, `load_artifacts()` nạp `models/artifacts/model.joblib`, `models/artifacts/meta.json` (cột mô hình cần, trường raw, giá trị mặc định, nhãn ngành, ngưỡng) và `models/artifacts/background.csv` cho SHAP; `st.cache_resource` giữ mô hình trong bộ nhớ để không nạp lại ở mỗi lần tương tác. Thiếu tệp models/artifacts thì app dừng và báo cần chạy notebook. `T_LOW` và `T_HIGH` được đọc từ metadata, app không tự tính lại ngưỡng. Hàm `predict()` gọi `dropout_utils.add_features()`, chọn đúng 33 cột S1 theo metadata rồi lấy xác suất lớp Dropout từ `predict_proba()`. Hàm `tier_of()` áp dụng Xanh nếu $p<0{,}19$, Vàng nếu $0{,}19\le p<0{,}62$, Đỏ nếu $p\ge0{,}62$. Màu, nhãn và danh sách hành động là quy tắc nội dung do tác giả định nghĩa trong `TIER_STYLE`/`ACTIONS`, không phải mô hình sinh ra. Giao diện chia thành ba tab theo nhiệm vụ (danh sách cần ưu tiên, đánh giá một hồ sơ, thông tin mô hình); màu Đỏ/Vàng/Xanh luôn đi kèm chữ để không phụ thuộc riêng vào màu, và giao diện dùng màu theo biến theme của Streamlit để đọc được ở cả chế độ sáng lẫn tối.
 
@@ -788,7 +789,7 @@ Dữ liệu học tập và tài chính cần được giới hạn quyền truy
 2. **What-if:** thay đổi giả định số môn đạt để xem đầu ra mô hình đổi thế nào; mô phỏng không chứng minh tác động can thiệp thực tế.
 3. **Chấm điểm hàng loạt:** tải CSV, xếp hồ sơ theo xác suất, xuất tệp kết quả. Danh sách `Enrolled` hiện có 794 hồ sơ và được lưu tại `outputs/Danh_Sach_Can_Thiep.csv`.
 
-### Giao diện và các luồng thao tác
+### Giao diện và các luồng thao tác {#sec-app-ui}
 
 Ảnh chụp dưới đây là minh chứng từ phiên chạy ứng dụng, đi theo hành trình của CVHT: nhận danh sách, chọn ưu tiên, hiểu lý do, liên hệ và ghi nhận. Giao diện dùng nền tối theo cấu hình chụp; các con số trong ảnh minh họa tương tác và không thay thế bảng đánh giá trên tập test.
 
@@ -808,7 +809,7 @@ Dữ liệu học tập và tài chính cần được giới hạn quyền truy
 
 **Cách đọc @fig-app-single.** Tab "Đánh giá một hồ sơ" chia làm ba cột. Cột trái "Thông tin đầu vào" gồm ngành học, tuổi khi nhập học, giới tính, ô tích học bổng, điểm đầu vào (0–200) và điểm bằng cấp trước (0–200). Cột giữa "Kết quả học kỳ 1" gồm số môn đăng ký, số lần đánh giá, số môn đạt, điểm trung bình kỳ 1 (0–20), số môn được công nhận tín chỉ và số môn không có đánh giá. Cột phải "Kết quả dự báo" hiển thị xác suất, nhãn mức ưu tiên và gợi ý cho cố vấn.
 
-**Ví dụ trong hình.** Hồ sơ ví dụ là ngành Tourism, 20 tuổi, nữ, không học bổng, đăng ký 6 môn, có 8 lượt đánh giá, đạt 5 môn, điểm kỳ 1 là 12,34; hệ thống trả xác suất 39,0%, mức Vàng ("cố vấn cần xem lại hồ sơ") và hai gợi ý nhắc lịch học/thi, chia sẻ tài nguyên hỗ trợ học tập. Ví dụ cho thấy một sinh viên đạt 5/6 môn vẫn ở mức Vàng vì ngưỡng 0,19 khá thấp; nó cũng phù hợp với việc 55,4% hồ sơ Test bị gắn cờ ở ngưỡng này (Mục 5.2).
+**Ví dụ trong hình.** Hồ sơ ví dụ là ngành Tourism, 20 tuổi, nữ, không học bổng, đăng ký 6 môn, có 8 lượt đánh giá, đạt 5 môn, điểm kỳ 1 là 12,34; hệ thống trả xác suất 39,0%, mức Vàng ("cố vấn cần xem lại hồ sơ") và hai gợi ý nhắc lịch học/thi, chia sẻ tài nguyên hỗ trợ học tập. Ví dụ cho thấy một sinh viên đạt 5/6 môn vẫn ở mức Vàng vì ngưỡng 0,19 khá thấp; nó cũng phù hợp với việc 55,4% hồ sơ Test bị gắn cờ ở ngưỡng này ([Mục 5.2](#sec-thresholds)).
 
 **Giới hạn của hồ sơ nhập tay.** App yêu cầu CVHT nhập các trường dễ xác minh như ngành, tuổi, giới tính, học bổng, điểm đầu vào và tiến độ kỳ 1; các trường raw khác mà LR sử dụng nhưng không có trên form nhận giá trị mặc định từ metadata. Vì vậy đây là hồ sơ đầu vào một phần, không phải toàn bộ 33 biến được quan sát ở mỗi người, và một phần của xác suất hiển thị đến từ giá trị mặc định. App hiển thị xác suất, mức ưu tiên và các bước gợi ý; nếu số môn đạt lớn hơn số môn đăng ký, giao diện cảnh báo kiểm tra dữ liệu.
 
@@ -826,7 +827,7 @@ Các dự báo trên `Enrolled` chưa thể đánh giá vì nhãn kết quả cu
 
 <!-- TODO trước khi nộp: chèn URL app online hoặc tên tệp video demo 2-3 phút (theo rubric) vào Phụ lục D. -->
 
-## Quy trình vận hành đề xuất
+## Quy trình vận hành đề xuất {#sec-workflow}
 
 | Thời điểm | Đơn vị phụ trách | Hoạt động | Bằng chứng cần ghi nhận |
 |---|---|---|---|
@@ -842,7 +843,7 @@ Thí điểm nên bắt đầu ở chế độ "shadow": tạo điểm nhưng ch
 
 Theo dõi dịch chuyển dữ liệu và concept drift theo khóa học là cần thiết khi mô hình cập nhật định kỳ [@gama2014]. Không nên huấn luyện lại hàng năm chỉ vì lịch; cần xem chất lượng nhãn, thay đổi chương trình, hiệu năng tổng thể và theo nhóm, cùng tác động của các can thiệp. Nếu can thiệp thay đổi kết quả, cần ghi nhận để đánh giá và tránh học nhầm quan hệ từ dữ liệu đã qua can thiệp.
 
-## Hạn chế và hướng nghiên cứu
+## Hạn chế và hướng nghiên cứu {#sec-limits}
 
 | Hạn chế | Ảnh hưởng | Hướng khắc phục |
 |---|---|---|
@@ -861,7 +862,7 @@ Theo dõi dịch chuyển dữ liệu và concept drift theo khóa học là c�
 
 Hướng tiếp theo gồm kiểm định ngoài mẫu tại cơ sở giáo dục mục tiêu; hiệu chỉnh xác suất và ngưỡng theo năng lực hỗ trợ; đánh giá khoảng tin cậy fairness; bổ sung dữ liệu LMS hợp lệ; và thử nghiệm có đối chứng để đo tác động thật của can thiệp. Mục tiêu không chỉ là dự báo chính xác hơn mà còn là xác định liệu quy trình hỗ trợ có cải thiện kết quả sinh viên hay không.
 
-# Kết luận {.unnumbered}
+# Kết luận {#sec-conclusion .unnumbered}
 
 Đồ án đã hiện thực hóa một quy trình cảnh báo sớm S1 từ dữ liệu UCI đến mô hình, giải thích SHAP, phân tầng rủi ro và ứng dụng chấm điểm. Các câu hỏi nghiên cứu được trả lời như sau.
 
@@ -875,14 +876,14 @@ Hướng tiếp theo gồm kiểm định ngoài mẫu tại cơ sở giáo dụ
 
 Các kết quả phù hợp để minh họa tiềm năng hỗ trợ sàng lọc, chưa chứng minh khả năng giảm nghỉ học. Chỉ nên tiến tới thí điểm khi dữ liệu, ngưỡng, quyền riêng tư và cơ chế đánh giá tác động được xác nhận tại đơn vị sử dụng.
 
-# Tài liệu tham khảo {.unnumbered}
+# Tài liệu tham khảo {#sec-refs .unnumbered}
 
 ::: {#refs}
 :::
 
-# Phụ lục A. Danh mục biến và tệp bàn giao {.unnumbered}
+# Phụ lục A. Danh mục biến và tệp bàn giao {#sec-app-a .unnumbered}
 
-## Đặc tả các nhóm biến trong cấu hình S1 {.unnumbered}
+## Đặc tả các nhóm biến trong cấu hình S1 {#sec-app-a-s1 .unnumbered}
 
 Cấu hình S1 gồm 33 cột mà pipeline cần theo đúng thứ tự được lưu trong `models/artifacts/meta.json`. Bảng sau liệt kê các trường thường được người dùng nhìn thấy và cách diễn giải; các trường mã hóa danh mục còn lại được đọc từ tệp dữ liệu gốc theo từ điển UCI.
 
@@ -906,19 +907,10 @@ Bộ dữ liệu gốc có 36 thuộc tính đầu vào; danh mục đầy đủ
 
 **Tệp dự án:** `notebooks/SIC_UCI_DropStudent_out.ipynb` (quy trình phân tích); `dropout_utils.py` (tiện ích); `app.py` (ứng dụng); `models/artifacts/model.joblib`, `models/artifacts/meta.json`, `models/artifacts/background.csv` (mô hình và cấu hình); `outputs/Danh_Sach_Can_Thiep.csv` (kết quả chấm điểm 794 hồ sơ).
 
-# Phụ lục B. Bảng phân công và đóng góp {.unnumbered}
-
-| Thành viên | MSSV | Công việc chính | Tỷ lệ đóng góp |
-|---|---|---|---:|
-| Phạm Đăng Hoàng Thiên | 2403700151 | Phân tích dữ liệu, xây dựng mô hình và ứng dụng, tổng hợp báo cáo | 100% |
-| **Tổng** |  |  | **100%** |
-
-: Bảng phân công và tỷ lệ đóng góp {#tbl-contribution}
-
-# Phụ lục C. Tuyên bố giới hạn sử dụng {.unnumbered}
+# Phụ lục B. Tuyên bố giới hạn sử dụng {#sec-app-b .unnumbered}
 
 Hệ thống là nguyên mẫu học thuật dựa trên dữ liệu lịch sử. Mức rủi ro không phải đánh giá năng lực, thái độ hay hoàn cảnh của cá nhân. Mọi liên hệ hỗ trợ cần do con người thực hiện, tôn trọng quyền riêng tư và cho phép sinh viên phản hồi hoặc đính chính dữ liệu.
 
-# Phụ lục D. Hướng dẫn chạy lại {.unnumbered}
+# Phụ lục C. Hướng dẫn chạy lại {#sec-app-c .unnumbered}
 
 Ba bước tham khảo: (1) đặt dữ liệu UCI theo đường dẫn mà notebook đọc; (2) chạy toàn bộ `notebooks/SIC_UCI_DropStudent_out.ipynb` để sinh `models/artifacts/` và `outputs/Danh_Sach_Can_Thiep.csv`; (3) chạy `streamlit run app.py` từ thư mục chứa `app.py`, `dropout_utils.py` và `models/artifacts/`. Các con số trong báo cáo lấy từ phiên chạy hiện có; nếu đổi seed hoặc phiên bản thư viện, kết quả có thể thay đổi nhẹ.
